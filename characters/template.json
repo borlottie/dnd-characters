@@ -1,0 +1,275 @@
+{
+    "name": "Template",
+	
+	"charID":"template",
+
+	"styles": {
+		"styleSheet":"Caster",
+		"accentColour":"rgb(13, 141, 155)",
+		"backgroundColour":"rgb(1, 11, 24)",
+		"lighterBackgroundColour":"rgb(8, 28, 53)",
+		"textColour":"rgb(218, 251, 255)",
+		"backgroundImage":"fixed url(\"../images/aurora.jpg\")"
+	},
+
+    "basics": {
+        "class": "Sorcerer 1",
+        "background": "Charlatan",
+        "player": "Lottie",
+        "race": "Triton",
+        "alignment": "True Neutral",
+        "xp": "N/A"
+    },
+
+	"miscData": { 
+        "profBonus": 2,
+        "ac": 13,
+        "acHover": "Here you can put stuff like what your AC is without armour",
+        "init": 3,
+        "initHover": "", 
+        "speed": "30ft",
+        "speedHover": "30ft swimming speed.",
+        "passivePerception": 17,
+		"spellStat":"cha"
+    },
+
+    "abilityScores": {
+        "str": 9,
+        "dex": 16,
+        "con": 12,
+        "int": 10,
+        "wis": 12,
+        "cha": 20
+    },
+
+    "saveProfs": ["con", "cha"], 
+    "skillProfs": ["persuasion", "arcana", "religion", "insight", "deception"],
+	"skillExpertise":["deception", "animal handling"], 
+    "otherProfs": {
+        "Languages": "Common, Primordial & dialects",
+        "Armour": "None",
+        "Weapons": "Daggers, Darts, Slings, Quarterstaffs, Light crossbows",
+        "Tools": "Disguise kit, forgery kit"
+    },
+
+	"health": {
+		"maxHp":20,
+		"hitDice": ["1d6", "2d8"]
+	},
+	
+	"defenses": [ 
+		{
+			"type":"Resistance",
+			"text":"Resistance to poison damage"
+		},
+		{
+			"type":"Immunity",
+			"text":"Immune to fire damage"
+		},
+		{
+			"type":"Advantage",
+			"text":"Advantage on saving throws against being frightened"
+		},
+		{
+			"type":"Custom",
+			"text":"Cannot be put to sleep magically.",
+			"hover":"You also can't like dream etc because you literally don't sleep"
+		}
+	],
+
+    "advantages": [
+        {
+            "type": "save",
+            "stat": "dex",
+            "hover": "Advantage against being tripped over idk this is hovertext",
+            "disadvantage": false
+        },
+        {
+            "type": "save",
+            "stat": "con",
+            "hover": "Disadvantage bc youre weak and sickly idk this is hovertext",
+            "disadvantage": true
+        },
+        {
+            "type": "skill",
+            "skill": "Stealth",
+            "hover": "Disadvantage in stealth because of armour hovertext",
+            "disadvantage": true
+        },
+        {
+            "type": "skill",
+            "skill": "Perception",
+            "hover": "Advantage on perception checks involving spell hovertext",
+            "disadvantage": false
+        },
+        {
+            "type": "skill",
+            "skill": "animal handling",
+            "hover": "IDK YOU FUCKING LIKE CATS OR SOMETHING",
+            "disadvantage": false
+        }
+    ],
+
+	"details": {
+		"Appearance":"blahblah red hair",
+		"appearanceUrl": "https://u.cubeupload.com/walrusthecowbird/1zbo5G.png",
+		"Personality Traits":"blahblah nice person",
+		"Flaws":"blahblah naive idk",
+		"Bonds":"blahblah loves her baby sister who's dead (oops)",
+		"Ideals":"blahblah peace or whatever"
+	},
+
+    "features": {
+		"Race Features": [
+			{
+				"title": "Amphibious",
+				"desc": "You can breathe air and water.",
+				"hover": "Becayse of your triton ancestry blah blah blah this would be a tooltip/popup i imagine"
+			},
+			{
+				"title": "Emissary of the Sea",
+				"desc": "Communicate with stuff that can swim yo",
+				"hover": "You can communicate simple ideas to any Beast, Elemental, or Monstrosity that has a swimming speed. \nIt can understand your words, though you have no special ability to understand it in return."
+			}
+		],
+		"Class Features": [
+			{
+				"title": "Spellcasting",
+				"desc": "ur a spellcaster lmao ofc you can cast spells",
+				"hover": "pretend this has info about sorcery points."
+			},
+			{
+				"title": "Sorcerer Subclass",
+				"desc": "Subclass is idk storm sorcerer or whatever",
+				"hover": ""
+			}
+		],
+		"Charlatan Background": {
+			"desc":"Youre a con artist >:))",
+			"hover":"waheyyyy"
+		}
+	},
+
+	"notes": {
+		"Backstory":"Here is your backstory blah blah blah",
+		"Connections": {
+			"Blah monastery":"You spent 5 years at blah monastery",
+			"Blah school":"You studied here"
+		},
+		"Notes":"[field]",
+		"NPCs":{
+			"Friends":"[field]",
+			"Enemies":"hello blah",
+			"Allies":"[field]"
+		}
+	},
+
+	"actions": [
+		{
+			"name":"Light Crossbow",
+			"type":"weapon",
+			"proficiency":true, 
+			"damageDice":"1d8",
+			"ability":"dex", 
+			"damageMod":0, 
+			"damageType":"piercing",
+			"hover":"Range 20 / 60 idk"
+		},
+		{
+			"name":"① Witch Bolt ©",
+			"type":"spell", 
+			"damageDice":"1d12",
+			"damageMod":0, 
+			"damageType":"lightning",
+			"hover":"30ft range. On subsequent turns while concentration lasts (max 1 minute), use your action to deal a subsequent 1d12 automatically. The spell ends if you use your action for something other than this." 
+		},
+		{
+			"name":"Lightning Lure ©",
+			"type":"save",
+			"saveType":"str",
+			"damageDice":"1d8",
+			"damageMod":0, 
+			"damageType":"lightning*",
+			"hover":"15ft range. On a save failure the creature is pulled up to 10ft towards you and then, if within 5ft of you, takes the damage."
+		},
+		{ 
+			"desc":"Blahblahblah you do this and it pulls the person towards you",
+			"hover":"explain the various mechanics idk"
+		}
+	],
+
+    "equipment": [ 
+        {
+            "name": "Light Crossbow",
+            "amount": 2,
+            "consumable": "no",
+			"hover":""
+        },
+        {
+            "name": " Blanket", 
+			"hover":""
+        },
+        {
+            "name": "  Dagger",
+            "amount": 2,
+            "consumable": "semi"
+        },
+		{
+			"name":" Rations (1 day)",
+			"consumable":"yes",
+			"hover":"info about if you eat half rations idk"
+		},
+		"Money",
+		"Fame",
+		"Glory"
+    ],
+
+	"expendables": { 
+		"1st level spells":{
+			"type":"dot", 
+			"amount":3, 
+			"hover":"",
+			"replenish":"Long rest" 
+		},
+		"Ki points left":{
+			"type":"form",
+			"max":10, 
+			"hover":"im so high level i have 453487594 ki points wooo",
+			"default":10,
+			"replenish":"Short rest"
+		},
+		"Days since dropping unconscious":{
+			"type":"counter",
+			"hover":"tee hee",
+			"replenish":"" 
+		}
+	},
+
+	"spellList": { 
+		
+		"preparable":4, 
+
+		"alwaysSpells":{
+			"Cantrips":{ 
+				"Fire Bolt":"Explain fire bolt",
+				"Guidance":"1d4 etc"
+			},
+			"Spells":{
+				"① Witch Bolt ©":"Explain witch bolt",
+				"② Some level 2 spell":"Explain it here"
+			}
+		},
+
+		"preparableSpells":{
+			"Level 1": { 
+				"Chaos Bolt":"Explain what chaos bolt does here!",
+				"Cure wounds":"Explain cure wounds"
+			},
+			"Level 2": {
+				"Spell 1":"Help i dont know any l2 spells",
+				"Spell 2":"Help i still dont know any l2 spells"
+			}
+		}
+		
+	}
+}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <h2 id="title"></h2>
+        <p id="body"></p>
+    </body>
+    <script>
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+
+        const title = urlParams.get('title')
+        const body = urlParams.get('body')
+
+        document.getElementById("title").innerText = title
+        document.getElementById("body").innerText = body
+    </script>
+</html>

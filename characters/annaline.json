@@ -1,0 +1,268 @@
+{
+    "name": "Annaline Silverglide",
+	
+	"charID":"annaline", 
+
+	"styles": {
+		"styleSheet":"Caster", 
+		"accentColour":"seagreen",
+		"backgroundColour":"#f2f7f4",
+		"lighterBackgroundColour":"white",
+		"textColour":"darkslategray",
+		"backgroundImage":"fixed 0 25% / cover url(\"../images/waves.jpeg\")"
+	},
+
+    "basics": {
+        "class": "Sorcerer 1",
+        "background": "Charlatan",
+        "player": "Lottie",
+        "race": "Triton",
+        "alignment": "True Neutral",
+        "xp": "N/A"
+    },
+
+	"miscData": { 
+        "profBonus": 2,
+        "ac": 13,
+        "acHover": "",
+        "init": 3,
+        "initHover": "", 
+        "speed": "30ft",
+        "speedHover": "30ft swimming speed.",
+        "passivePerception": 11,
+		"spellStat":"cha"
+    },
+
+    "abilityScores": {
+        "str": 9,
+        "dex": 16,
+        "con": 12,
+        "int": 10,
+        "wis": 12,
+        "cha": 20
+    },
+
+    "saveProfs": ["con", "cha"],
+    "skillProfs": ["persuasion", "sleight of hand", "insight", "deception"],
+	"skillExpertise":[],
+    "otherProfs": {
+        "Languages": "Common, Primordial & dialects",
+        "Armour": "None",
+        "Weapons": "Daggers, Darts, Slings, Quarterstaffs, Light crossbows",
+        "Tools": "Disguise kit, Forgery kit"
+    },
+
+	"health": {
+		"maxHp":7,
+		"hitDice": ["1d6"]
+	},
+	
+	"defenses": [ 
+		{
+			"type":"Resistance",
+			"text":"Resistance to cold damage"
+		}
+	],
+
+    "advantages": [],
+
+	"details": { 
+		"Appearance":"Annaline has eggshell blue skin and deep green hair. However she has many other characters she often plays which have different appearances.",
+		"appearanceUrl": "images/placeholderCheckbox.png",
+		"Personality Traits":"Flattery is my preferred trick for getting what I want. When I look pretty and give compliments, I can achieve anything.",
+		"Ideals":"Independence. I am a free spirit – no one tells me what to do.",
+		"Bonds":"I have an ex lover I seek to one day find again. I swindled her, but it’s all water under the bridge… right?",
+		"Flaws":"I can't resist swindling people who are richer or more powerful than me. I can’t help it - they just don’t deserve their money."
+	},
+
+    "features": { 
+		"Race Features": [
+			{
+				"title": "Amphibious",
+				"desc": "You can breathe air and water.",
+				"hover": ""
+			},
+            {
+                "title":"Darkvision",
+                "desc":"You have darkvision to 60ft.",
+                "hover":"You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray."
+            },
+			{
+				"title": "Emissary of the Sea",
+				"desc": "You can communicate simple ideas to any Beast, Elemental, or Monstrosity that has a swimming speed. It can understand your words, though you have no special ability to understand it in return.",
+				"hover": ""
+			},
+            {
+                "title":"Control Air and Water",
+                "desc":"You can cast Fog Cloud with this trait. Once you cast a spell with this trait, you can’t cast that spell with it again until you finish a long rest.",
+                "hover":"Starting at 3rd level, you can cast Gust of Wind with this trait, and starting at 5th level, you can also cast Wall of Water with it. Charisma is your spellcasting ability for all three spells."
+            }
+		],
+		"Class Features": [
+			{
+				"title": "Tempestuous Magic",
+				"desc": "You can use a bonus action on your turn immediately before or after you cast a spell of 1st level or higher. Doing so allows you to fly up to 10 feet without provoking opportunity attacks.",
+				"hover": ""
+			}
+		],
+		"Charlatan Background": [
+			{
+				"title": "Favourite Scheme",
+				"desc": "I put on new identities like clothes. I’ve been every girl, and plenty of others too.",
+				"hover": ""
+			},
+            {
+                "title":"False Identity",
+                "desc":"You have created a second identity that includes documentation, established acquaintances, and disguises that allow you to assume that persona.\nYou can forge documents including official papers and personal letters, as long as you have seen an example of the kind of document or the handwriting you are trying to copy.",
+                "hover":""
+            }
+		]
+	},
+
+	"notes": {
+		"Backstory":"Here is your backstory blah blah blah",
+		"Connections": {
+			"Blah monastery":"You spent 5 years at blah monastery",
+			"Blah school":"You studied here"
+		},
+		"Notes":"[field]",
+		"NPCs":{
+			"Friends":"[field]",
+			"Enemies":"hello blah",
+			"Allies":"[field]"
+		}
+	},
+
+	"actions": [
+		{
+			"name":"Light Crossbow",
+			"type":"weapon",
+			"proficiency":true, 
+			"damageDice":"1d8",
+			"ability":"dex", 
+			"damageMod":0,
+			"damageType":"piercing",
+			"hover":"Range 80ft (normal) / 320ft (disadvantage). Loading, range, 2-handed"
+		},
+        {
+			"name":"Dagger",
+			"type":"weapon", 
+			"proficiency":true,
+			"damageDice":"1d4", 
+			"ability":"dex",
+			"damageMod":0, 
+			"damageType":"piercing",
+			"hover":"Range 20ft (normal) / 60ft (disadvantage). Finesse, light, range, thrown"
+		},
+		{
+			"name":"Lightning Lure ©",
+			"type":"save",
+			"saveType":"str", 
+			"damageDice":"1d8", 
+			"damageMod":0, 
+			"damageType":"lightning*",
+			"hover":"15ft range. On a save failure the creature is pulled up to 10ft towards you and then, if within 5ft of you, takes the damage." 
+		},
+        {
+			"name":"Ray of Frost", 
+			"type":"spell", 
+			"damageDice":"1d8",
+			"damageMod":0,
+			"damageType":"cold*",
+			"hover":"60ft range. Make a RANGED spell attack. On a hit the creature's speed is also reduced by 10ft until the start of your next turn." 
+		},
+        {
+			"name":"① Witch Bolt ©", 
+			"type":"spell",
+			"damageDice":"1d12",
+			"damageMod":0,
+			"damageType":"lightning",
+			"hover":"30ft range. Make a RANGED spell attack. On subsequent turns while concentration lasts (max 1 minute), use your action to deal a subsequent 1d12 automatically. The spell ends if you use your action for something other than this."
+		}
+	],
+
+    "equipment": [ 
+        {
+            "name": "Light Crossbow",
+			"hover":""
+        },
+        {
+            "name": "Crossbow Bolts",
+            "amount": 20,
+            "consumable": "semi",
+			"hover":""
+        },
+        {
+            "name": "Dagger",
+            "amount": 2,
+            "consumable": "semi",
+			"hover":""
+        },
+        "Component Pouch",
+        "Set of fine clothes",
+        "Disguise Kit",
+        "Signet Ring",
+        "Explorer's Pack:",
+        " Backpack",
+        " Bedroll",
+        " Mess Kit",
+        " Tinderbox",
+        " Torches",
+		{
+			"name":" Rations (1 day)",
+			"consumable":"yes"
+		},
+        " Waterskin",
+        {
+			"name":" Rope (ft)",
+			"consumable":"yes",
+			"hover":"Hempen rope"
+		}
+    ],
+
+	"expendables": { 
+		"1st level spells":{
+			"type":"dot",
+			"amount":3,
+			"hover":"",
+			"replenish":"Long rest" 
+		},
+		"Ki points":{
+			"type":"form",
+			"max":10,
+			"hover":"im so high level i have 453487594 ki points wooo",
+			"default":10,
+			"replenish":"Short rest"
+		},
+		"Days since dropping unconscious":{
+			"type":"counter",
+			"hover":"tee hee",
+			"replenish":""
+		}
+	},
+	"spellList": {
+		"preparable":4, 
+
+		"preparableSpells":{ 
+			"Level 1": { 
+				"Chaos Bolt":"Explain what chaos bolt does here!", 
+				"Cure wounds":"Explain cure wounds"
+			},
+			"Level 2": {
+				"Spell 1":"Help i dont know any l2 spells",
+				"Spell 2":"Help i still dont know any l2 spells"
+			}
+		},
+
+		"alwaysSpells":{ 
+			"Cantrips":{
+				"Fire Bolt":"Explain fire bolt",
+				"Guidance":"1d4 etc"
+			},
+			"Spells":{
+				"① Witch Bolt ©":"Explain witch bolt",
+				"② Some level 2 spell":"Explain it here"
+			}
+		}
+	}
+}

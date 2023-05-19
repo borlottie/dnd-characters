@@ -1,0 +1,131 @@
+/* Support for casters has been fully removed from this !! */
+
+.iname {
+    grid-column: 1 / span 4;
+    grid-row: 1 / span 2;
+}
+  
+.iclassblock {
+    grid-column: 5 / span 5;
+    grid-row: 1 / span 2;
+}
+  
+.imainstats {
+    grid-column: 1;
+    grid-row: 3 / span 12;
+}
+  
+.iinspiration {
+    grid-column: 2 / span 2;
+    grid-row: 3;
+}
+  
+.iprofbonus {
+    grid-column: 1 / span 2;
+    grid-row: 16;
+}
+  
+.isaves {
+    grid-column: 2 / span 2;
+    grid-row: 4 / span 3;
+}
+  
+.iskills {
+    grid-column: 2 / span 2;
+    grid-row: 7 / span 8;
+}
+  
+.ipassives {
+    grid-column: 1 / span 2;
+    grid-row: 15;
+}
+  
+.ideath {
+    grid-column: 3;
+    grid-row: 15 / span 2;
+}
+
+.iprofs {
+    grid-column: 1 / span 3;
+    grid-row: 17 / span 3;
+}
+  
+.iac {
+    grid-column: 4;
+    grid-row: 3 / span 2;
+}
+  
+.iinit {
+    grid-column: 5;
+    grid-row: 3 / span 2;
+}
+  
+.ispeed {
+    grid-column: 6;
+    grid-row: 3 / span 2;
+}
+  
+.icurrenthp {
+    grid-column: 4 / span 2;
+    grid-row: 5;
+}
+  
+.ihealdamage {
+    grid-column: 4;
+    grid-row: 6 / span 2;
+}
+
+.itemphp {
+    grid-column: 6;
+    grid-row: 5;
+}
+  
+.ihitdice {
+    grid-column: 5 / span 2;
+    grid-row: 6 / span 2;
+}
+  
+.iconditions {
+    grid-column: 4 / span 3;
+    grid-row: 8 / span 2;
+}
+
+.iexpendables {
+    grid-column: 4 / span 3;
+    grid-row: 10 / span 2;
+}
+
+.iactions {
+    grid-column: 4 / span 3;
+    grid-row: 12 / span 4;
+}
+  
+.iequip {
+    grid-column: 4 / span 3;
+    grid-row: 16 / span 5;
+}
+  
+.ipersonality {
+    grid-column: 7 / span 3;
+    grid-row: 3 / span 9;
+}
+  
+.ifeatures {
+    grid-column: 7 / span 3;
+    grid-row: 12 / span 9;
+}
+
+.inotes {
+    grid-column: 4 / span 6;
+    grid-row: 22 / span 2;
+}
+
+.inotestitle {
+    grid-column: 4 / span 6;
+    grid-row: 21;
+}
+
+.inotescontainer {
+    grid-column: 4 / span 6;
+    grid-row: 21 / span 3;
+}

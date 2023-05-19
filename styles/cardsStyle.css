@@ -1,0 +1,122 @@
+/* tysm https://blog.logrocket.com/creating-css-masonry-style-layouts/ */
+/* https://css-tricks.com/piecing-together-approaches-for-a-css-masonry-layout/ is also useful */
+/* https://www.w3schools.com/css/css3_multiple_columns.asp */
+
+/* for now, manually make this match the char it belongs with */
+:root {
+    --accent: seagreen;
+    --background: #f2f7f4;
+    --text: darkslategray;
+}
+
+body {
+    background: fixed url("../images/waves.jpeg");
+    background-size: cover;
+    background-position: 0 25%;
+}
+
+.wrapper {
+    column-width: 400px;
+  }
+  
+.booktemplate {
+    font-family: Arial, Helvetica, sans-serif;
+    content: "th level";
+    width: calc(100% - 20px);
+    margin: 15px 10px;
+    border: 2px solid var(--accent);
+    border-radius: 5px;
+    display: inline-block;
+    font-size: 90%;
+    background-color: var(--background);
+}
+
+.booktemplate.single div.list-hide.inapp-hide.single-view.slide-down.content-toggle,
+.inapp div.list-hide.inapp-hide.single-view.slide-down.content-toggle {
+    display: block !important;
+}
+
+.booktemplate.single-view {
+    margin: 5px 10px 5px 10px;
+    /* font-size: 0.5rem; */
+    border: 2px solid var(--accent);
+}
+
+.gold {
+    visibility: hidden;
+}
+
+.body {
+    margin: 10px 5px 5px 8px;
+}
+
+div.taper,
+hr {
+    border: 1px solid var(--accent);
+}
+
+.booktemplate .attributes {
+    display: inline-block;
+    width: 100%;
+    margin: 5px 0px 5px 0px;
+}
+
+.booktemplate .attr,
+.booktemplate .attr-cha {
+    display: inline-block;
+    margin: 0px 10px 0px 10px;
+    text-align: center;
+}
+
+.booktemplate .single-list span,
+.booktemplate .attributes span {
+    font-weight: bold;
+}
+
+.booktemplate .traits span,
+.booktemplate .actions span,
+.booktemplate .reactions span,
+.booktemplate .legendary-actions span,
+.booktemplate .mythic-actions span {
+    font-weight: bolder;
+    font-style: italic;
+}
+
+.booktemplate ul {
+    list-style-type: none;
+    margin-left: -38px;
+    margin-bottom: 10px;
+}
+
+.booktemplate li {
+    margin: 5px 0px 0px 0px;
+}
+
+ul,
+menu,
+dir {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.booktemplate .name h1 {
+    font-weight: bolder;
+    text-transform: capitalize;
+    margin: 0;
+}
+
+h1 {
+    display: block;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.booktemplate .subtitle {
+    font-style: italic;
+}

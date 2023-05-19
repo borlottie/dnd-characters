@@ -1,0 +1,48 @@
+/* dot checkboxes */
+
+/* Hide the initial checkbox */
+input[type=checkbox] {
+	display: none;
+}
+
+/* The div to have the outside circle (div should be within a label so you can click it to toggle) */
+.dotCheckbox {
+	display: inline-block;
+	position: relative;
+	width: 12px;
+	height: 12px;
+	background-color: var(--lightBackground);
+	border-radius: 100%;
+	border: 1.5px solid var(--accent);
+}
+
+/* The dot in the middle */
+.dotCheckbox span{
+	display: inline-block;
+	width: 9px;
+	height: 9px;
+	border-radius: 100%;
+	position: absolute;
+	top:1.5px;
+	left:1.5px;
+}
+
+/* The dot in the middle goes black when checkbox is checked */
+.dotCheckbox input[type=checkbox]:checked + span{
+	background: var(--accent);
+}
+
+/* example with a bigger checkbox - using scaling */
+.bigDot {
+	transform: scale(2);
+	border-width: 1px; /*since it gets scaled */
+	left: 4px;
+}
+
+.dotCheckbox + h3 {
+	padding-left: 20px;
+}
+
+label:has(div.dotCheckbox) {
+	margin: 1px;
+}

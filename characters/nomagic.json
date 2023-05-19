@@ -1,0 +1,247 @@
+{
+    "name": "No Magic",
+	
+	"charID":"nomagic", 
+
+	"styles": {
+		"styleSheet":"", 
+		"accentColour":"slateblue",
+		"backgroundColour":"",
+		"lighterBackgroundColour":"#eee",
+		"textColour":"darkslateblue",
+		"backgroundImage":"linear-gradient(rgba(131,58,180, 0.3) 0%, rgba(180,46,119, 0.3) 20%, rgba(253,29,29, 0.3) 80%, rgba(252,176,69, 0.3) 100%)"
+	},
+
+    "basics": {
+        "class": "Sorcerer 1",
+        "background": "Charlatan",
+        "player": "Lottie",
+        "race": "Triton",
+        "alignment": "True Neutral",
+        "xp": "N/A"
+    },
+
+	"miscData": { 
+        "profBonus": 2,
+        "ac": 13,
+        "acHover": "",
+        "init": 3,
+        "initHover": "", 
+        "speed": "30ft",
+        "speedHover": "30ft swimming speed.",
+        "passivePerception": 11,
+		"spellStat":""
+    },
+
+    "abilityScores": {
+        "str": 9,
+        "dex": 16,
+        "con": 12,
+        "int": 10,
+        "wis": 12,
+        "cha": 20
+    },
+
+    "saveProfs": ["con", "cha"],
+    "skillProfs": ["persuasion", "sleight of hand", "insight", "deception"],
+	"skillExpertise":[],
+    "otherProfs": {
+        "Languages": "Common, Primordial & dialects",
+        "Armour": "None",
+        "Weapons": "Daggers, Darts, Slings, Quarterstaffs, Light crossbows",
+        "Tools": "Disguise kit, Forgery kit"
+    },
+
+	"health": {
+		"maxHp":7,
+		"hitDice": ["1d6"]
+	},
+	
+	"defenses": [ 
+		{
+			"type":"Resistance",
+			"text":"Resistance to cold damage"
+		}
+	],
+
+    "advantages": [],
+
+	"details": { 
+		"Appearance":"Annaline has eggshell blue skin and deep green hair. However she has many other characters she often plays which have different appearances.",
+		"appearanceUrl": "images/placeholderCheckbox.png",
+		"Personality Traits":"Flattery is my preferred trick for getting what I want. When I look pretty and give compliments, I can achieve anything.",
+		"Ideals":"Independence. I am a free spirit – no one tells me what to do.",
+		"Bonds":"I have an ex lover I seek to one day find again. I swindled her, but it’s all water under the bridge… right?",
+		"Flaws":"I can't resist swindling people who are richer or more powerful than me. I can’t help it - they just don’t deserve their money."
+	},
+
+    "features": { 
+		"Race Features": [
+			{
+				"title": "Amphibious",
+				"desc": "You can breathe air and water.",
+				"hover": ""
+			},
+            {
+                "title":"Darkvision",
+                "desc":"You have darkvision to 60ft.",
+                "hover":"You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray."
+            },
+			{
+				"title": "Emissary of the Sea",
+				"desc": "You can communicate simple ideas to any Beast, Elemental, or Monstrosity that has a swimming speed. It can understand your words, though you have no special ability to understand it in return.",
+				"hover": ""
+			},
+            {
+                "title":"Control Air and Water",
+                "desc":"You can cast Fog Cloud with this trait. Once you cast a spell with this trait, you can’t cast that spell with it again until you finish a long rest.",
+                "hover":"Starting at 3rd level, you can cast Gust of Wind with this trait, and starting at 5th level, you can also cast Wall of Water with it. Charisma is your spellcasting ability for all three spells."
+            }
+		],
+		"Class Features": [
+			{
+				"title": "Tempestuous Magic",
+				"desc": "You can use a bonus action on your turn immediately before or after you cast a spell of 1st level or higher. Doing so allows you to fly up to 10 feet without provoking opportunity attacks.",
+				"hover": ""
+			}
+		],
+		"Charlatan Background": [
+			{
+				"title": "Favourite Scheme",
+				"desc": "I put on new identities like clothes. I’ve been every girl, and plenty of others too.",
+				"hover": ""
+			},
+            {
+                "title":"False Identity",
+                "desc":"You have created a second identity that includes documentation, established acquaintances, and disguises that allow you to assume that persona.\nYou can forge documents including official papers and personal letters, as long as you have seen an example of the kind of document or the handwriting you are trying to copy.",
+                "hover":""
+            }
+		]
+	},
+
+	"notes": {
+		"Backstory":"Here is your backstory blah blah blah",
+		"Connections": {
+			"Blah monastery":"You spent 5 years at blah monastery",
+			"Blah school":"You studied here"
+		},
+		"Notes":"[field]",
+		"NPCs":{
+			"Friends":"[field]",
+			"Enemies":"hello blah",
+			"Allies":"[field]"
+		}
+	},
+
+	"actions": [
+		{
+			"name":"Light Crossbow",
+			"type":"weapon",
+			"proficiency":true, 
+			"damageDice":"1d8",
+			"ability":"dex", 
+			"damageMod":0,
+			"damageType":"piercing",
+			"hover":"Range 80ft (normal) / 320ft (disadvantage). Loading, range, 2-handed"
+		},
+        {
+			"name":"Dagger",
+			"type":"weapon", 
+			"proficiency":true,
+			"damageDice":"1d4", 
+			"ability":"dex",
+			"damageMod":0, 
+			"damageType":"piercing",
+			"hover":"Range 20ft (normal) / 60ft (disadvantage). Finesse, light, range, thrown"
+		}
+	],
+
+    "equipment": [ 
+        {
+            "name": "Light Crossbow",
+			"hover":""
+        },
+        {
+            "name": "Crossbow Bolts",
+            "amount": 20,
+            "consumable": "semi",
+			"hover":""
+        },
+        {
+            "name": "Dagger",
+            "amount": 2,
+            "consumable": "semi",
+			"hover":""
+        },
+        {
+            "name": "Component Pouch",
+			"hover":""
+        },
+        {
+            "name": "Set of fine clothes",
+			"hover":""
+        },
+        {
+            "name": "Disguise Kit",
+			"hover":""
+        },
+        {
+            "name": "Signet Ring",
+			"hover":""
+        },
+        {
+            "name": "Explorer's Pack:",
+			"hover":""
+        },
+        {
+            "name": "Backpack",
+			"hover":""
+        },
+        {
+            "name": "Bedroll",
+			"hover":""
+        },
+        {
+            "name": "Mess Kit",
+			"hover":""
+        },
+        {
+            "name": "Tinderbox",
+			"hover":""
+        },
+        {
+            "name": "Torches",
+            "consumable":"yes",
+			"hover":""
+        },
+		{
+			"name":"Rations (1 day)",
+			"consumable":"yes",
+			"hover":""
+		},
+        {
+            "name":"Waterskin",
+            "hover":""
+        },
+        {
+            "name": "Rope (ft)",
+			"consumable":"yes",
+            "hover":""
+        }
+    ],
+
+	"expendables": { 
+		"Ki points":{
+			"type":"form",
+			"max":10,
+			"hover":"im so high level i have 453487594 ki points wooo",
+			"default":10,
+			"replenish":"Short rest"
+		},
+		"Days since dropping unconscious":{
+			"type":"counter",
+			"hover":"tee hee",
+			"replenish":""
+		}
+	}
+}

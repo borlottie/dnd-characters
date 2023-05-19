@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title id="pageTitle">D&D Character Sheet</title>
+
+	<link id="layoutStyle" href="styles/gridStyle.css" rel="stylesheet" type="text/css" />
+	<link href="styles/checkBoxStyle.css" rel="stylesheet" type="text/css" />
+	<link href="styles/advStyle.css" rel="stylesheet" type="text/css" />
+	<link href="styles/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<!-- Generates navbar -->
+	<script id="navBarPlaceholder" src="navBar/navScript.js"></script>
+
+	<div class="grid-container">
+		<div class="grid-item iname outline center">
+			<div>
+				<h1 id="charName"></h1>
+				<h4>Character Name</h4>
+			</div>
+		</div>
+		<div class="grid-item outline iclassblock">
+			<table>
+				<tr>
+					<td>
+						<div id="class">
+							<h4>Class & Level</h4>
+						</div>
+					</td>
+
+					<td>
+						<div id="background">
+							<h4>Background</h4>
+						</div>
+					</td>
+
+					<td>
+						<div id="player">
+							<h4>Player Name</h4>
+						</div>
+					</td>
+				</tr>
+				<tr height="10"></tr>
+				<!--shitty little spacer-->
+				<tr>
+					<td>
+						<div id="race">
+							<h4>Race</h4>
+						</div>
+					</td>
+
+					<td>
+						<div id="alignment">
+							<h4>Alignment</h4>
+						</div>
+					</td>
+
+					<td>
+						<div id="xp">
+							<h4>Experience Points</h4>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="grid-item imainstats invis">
+			<table id="mainstats"></table>
+		</div>
+		<div class="grid-item iinspiration outline vcenter">
+			<label class="vcenter">
+				<div class="dotCheckbox bigDot">
+					<input type="checkbox" id="inspiration" onchange="update()">
+					<span></span>
+				</div>
+				<h3 class="inline">Inspiration</h3>
+			</label>
+		</div>
+		<div class="grid-item iprofbonus outline vcenter">
+			<p id="profBonus" class="big inline"></p>
+			<h3 class="inline">Proficiency Bonus</h3>
+		</div>
+		<div class="grid-item isaves outline">
+			<h3>Saving Throws</h3>
+			<table id="saves"></table>
+		</div>
+		<div class="grid-item iskills outline">
+			<h3>Skills</h3>
+			<table id="skills"></table>
+		</div>
+		<div class="grid-item ipassives outline vcenter">
+			<p id="passPerc" class="big inline"></p>
+			<h3 class="inline">Passive Perception</h3>
+		</div>
+		<div class="grid-item ideath outline">
+			<h3>Death Saves</h3>
+			<h4 id="deathSucc">Successes</h4>
+			<h4 id="deathFail">Failures</h4>
+		</div>
+		<div class="grid-item iprofs outline" id="otherProfs">
+			<h2>Other Proficiencies</h2>
+		</div>
+		<div class="grid-item iac center outline">
+			<div>
+				<h3>Armour Class</h3>
+				<p class="huge paragraph" id="ac"></p>
+			</div>
+		</div>
+		<div class="grid-item iinit center outline">
+			<div>
+				<h3>Initiative Bonus</h3>
+				<p class="huge paragraph" id="init"></p>
+			</div>
+		</div>
+		<div class="grid-item ispeed center outline">
+			<div>
+				<h3>Walking Speed</h3>
+				<p class="huge paragraph" id="speed"></p>
+			</div>
+		</div>
+
+		<div class="grid-item icurrenthp outline">
+			<h3>Hit Points</h3>
+			<div class="paragraph">
+				<input type="number" class="huge inline invis" id="currentHp" onchange="update()">
+				<p class="huge inline invis">/ </p>
+				<p class="huge inline invis" id="maxHp"></p>
+			</div>
+		</div>
+		<div class="grid-item itemphp outline">
+			<h3>Temp HP</h3>
+			<div class="paragraph">
+				<input type="number" class="huge inline invis" id="tempHp" onchange="update()">
+			</div>
+		</div>
+		<div class="grid-item ihealdamage outline">
+			<button onclick="hpModify('heal')" class="heal">
+				<h3>Heal</h3>
+			</button>
+
+			<div class="paragraph">
+				<input type="number" class="huge inline invis" id="healDamage" onchange="update()">
+			</div>
+
+			<button class="paragraph damage" onclick="hpModify('damage')">
+				<h3>Damage</h3>
+			</button>
+		</div>
+		<div class="grid-item ihitdice outline" id="hitDice">
+			<h3>Hit Dice</h2>
+		</div>
+		<div class="grid-item iconditions outline">
+			<div>
+				<h3>Conditions</h3>
+				<textarea id="conditions" onchange="update()"></textarea>
+				<h4 class="paragraph">Exhaustion</h4>
+				<div id="exhaustion" class="center">
+				</div>
+			</div>
+			<div id="defenses">
+				<h3>Defenses</h3>
+			</div>
+		</div>
+		<div class="grid-item iexpendables outline" id="expendables">
+			<h3>Expendables</h3>
+		</div>
+		<div class="grid-item iactions outline">
+			<h3>Actions</h3>
+			<table class="top" id="actions">
+			</table>
+		</div>
+		<div class="grid-item iequip outline" id="equipment">
+			<h3>Equipment</h3>
+			<div id="money">
+				<p class="small bottom" id="moneyReporter">blahhh</p>
+			</div>
+		</div>
+		<div class="grid-item ipersonality outline" id="personality"></div>
+		<div class="grid-item ifeatures outline" id="features"></div>
+		<div class="invis outline grid-item inotescontainer">
+			<div class="grid-item inotestitle" id="notestitle"></div>
+			<div class="grid-item inotes contractible" id="notes">
+			</div>
+		</div>
+
+		<!-- Will automatically hide if non-caster -->
+		<div class="grid-item ispells outline" id="spells"></div>
+		<div class="grid-item ipreparing outline" id="spellPrepare"></div>
+		<div class="grid-item ispellstats outline" id="spellStats">
+			<div>
+				<h3>Spellcasting Ability</h3>
+			</div>
+			<div>
+				<h3>Spell Save DC</h3>
+			</div>
+			<div>
+				<h3>Spell Attack Bonus</h3>
+			</div>
+		</div>
+	</div>
+
+	<!-- Local storage stuff -->
+	<div class="center">
+		<button id="localVis" onclick="storageVisibility()" class="utility">SHOW STORAGE</button>
+	</div>
+	<div class="center">
+		<textarea id="local" hidden></textarea>
+	</div>
+	<div class="center">
+		<button id="localLock" onclick="storageLock()" class="utility" hidden>LOCK STORAGE</button>
+		<button id="localOverwrite" onclick="storageOverwrite()" class="utility" hidden>OVERWRITE STORAGE</button>
+		<button id="localLoad" onclick="storageLoad()" class="utility" hidden>LOAD STORAGE</button>
+	</div>
+
+	<!-- Stylesheet changing - just for debugging -->
+	<!-- <div class="center">
+		<button onclick="switchStyle()" id="switchStyle" class="utility">Switch Stylesheet</button>
+	</div> -->
+
+	<!-- Spacer -->
+	<div style="height: 100px;"></div>
+
+	<!-- Scripts -->
+	<script src="scripts/functions.js"></script>
+	<script src="scripts/localStorage.js"></script>
+	<script src="scripts/dataLoader.js"></script>
+
+	<script src="scripts/initialLoad.js"></script>
+</body>
+
+</html>
