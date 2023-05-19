@@ -1,9 +1,9 @@
 const pages = {
-    "Annaline":"mainPage.html?src=annaline",
+    "Annaline":"index.html?src=annaline",
     "Stat Blocks":"cards.html",
     "spacer1":"", //anything with a blank url is a spacer
-    "Template":"mainPage.html?src=template",
-    "No Magic":"mainPage.html?src=nomagic"
+    "Template":"index.html?src=template",
+    "No Magic":"index.html?src=nomagic"
 }
 
 const placeholder = document.getElementById("navBarPlaceholder")
