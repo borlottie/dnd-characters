@@ -1,15 +1,15 @@
 {
-    "name": "Annaline Silverglide",
+    "name": "Annalyn Nadelvath (Annaline Silverglide)",
 	
 	"charID":"annaline", 
 
 	"styles": {
 		"styleSheet":"Caster", 
-		"accentColour":"seagreen",
-		"backgroundColour":"#f2f7f4",
-		"lighterBackgroundColour":"white",
-		"textColour":"darkslategray",
-		"backgroundImage":"fixed 0 25% / cover url(\"../images/waves.jpeg\")"
+		"accentColour":"rgb(9, 110, 141)",
+		"backgroundColour":"rgb(193, 217, 220)",
+		"lighterBackgroundColour":"rgb(220, 240, 245)",
+		"textColour":"rgb(1, 58, 79)",
+		"backgroundImage":"fixed 0 25% / cover url(\"../images/underwater.jpeg\")"
 	},
 
     "basics": {
