@@ -4,13 +4,13 @@
 
 /* for now, manually make this match the char it belongs with */
 :root {
-    --accent: seagreen;
-    --background: #f2f7f4;
-    --text: darkslategray;
+    --accent: rgb(9, 110, 141);
+    --background: rgb(193, 217, 220);
+    --text: rgb(1, 58, 79);
 }
 
 body {
-    background: fixed url("../images/waves.jpeg");
+    background: fixed 0 25% / cover url("../images/underwater.jpeg");
     background-size: cover;
     background-position: 0 25%;
 }

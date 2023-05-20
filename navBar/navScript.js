@@ -1,6 +1,6 @@
 const pages = {
     "Annaline":"index.html?src=annaline",
-    "Stat Blocks":"cards.html",
+    "Spells":"cards.html",
     "spacer1":"", //anything with a blank url is a spacer
     "Template":"index.html?src=template",
     "No Magic":"index.html?src=nomagic"
