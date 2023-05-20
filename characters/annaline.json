@@ -181,7 +181,7 @@
     "equipment": [ 
         {
             "name": "Light Crossbow",
-			"hover":""
+			"hover":"Range 80ft (normal) / 320ft (disadvantage). Loading, range, 2-handed"
         },
         {
             "name": "Crossbow Bolts",
@@ -191,7 +191,8 @@
         {
             "name": "Dagger",
             "amount": 2,
-            "consumable": "semi"
+            "consumable": "semi",
+			"hover":"Range 20ft (normal) / 60ft (disadvantage). Finesse, light, range, thrown"
         },
         "Component Pouch",
         "Set of fine clothes",
