@@ -1,7 +1,7 @@
 {
-    "name": "Annalyn Nadelvath (Annaline Silverglide)",
+    "name": "Annalyn Nadelvath",
 	
-	"charID":"annaline", 
+	"charID":"annalyn", 
 
 	"styles": {
 		"styleSheet":"Caster", 
@@ -67,7 +67,7 @@
     "advantages": [],
 
 	"details": { 
-		"Appearance":"Annaline has eggshell blue skin and deep green hair. However she has many other characters she often plays which have different appearances. She is 4'10\".",
+		"Appearance":"Annalyn has eggshell blue skin and deep green hair. However she has many other characters she often plays which have different appearances. She is 4'10\".",
 		"appearanceUrl": "images/annaline.png",
 		"Personality Traits":"Flattery is my preferred trick for getting what I want. When I look pretty and give compliments, I can achieve anything.",
 		"Ideals":"Independence. I am a free spirit – no one tells me what to do.",

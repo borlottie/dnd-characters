@@ -4,7 +4,7 @@ function navScript() {
     const navShow = urlParams.get("nav")
 
     const pages = {
-        "Annaline": "index.html?src=annaline&nav",
+        "Annalyn": "index.html?src=annalyn&nav",
         "Spells": "cards.html?nav",
         "spacer1": "", //anything with a blank url is a spacer
         "Template": "index.html?src=template&nav",
