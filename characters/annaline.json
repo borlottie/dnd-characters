@@ -24,7 +24,7 @@
 	"miscData": { 
         "profBonus": 2,
         "ac": 13,
-        "acHover": "",
+        "acHover": "Wears no armour.",
         "init": 3,
         "initHover": "", 
         "speed": "30ft",
@@ -67,8 +67,8 @@
     "advantages": [],
 
 	"details": { 
-		"Appearance":"Annaline has eggshell blue skin and deep green hair. However she has many other characters she often plays which have different appearances.",
-		"appearanceUrl": "images/placeholderCheckbox.png",
+		"Appearance":"Annaline has eggshell blue skin and deep green hair. However she has many other characters she often plays which have different appearances. She is 4'10\".",
+		"appearanceUrl": "images/annaline.png",
 		"Personality Traits":"Flattery is my preferred trick for getting what I want. When I look pretty and give compliments, I can achieve anything.",
 		"Ideals":"Independence. I am a free spirit – no one tells me what to do.",
 		"Bonds":"I have an ex lover I seek to one day find again. I swindled her, but it’s all water under the bridge… right?",
@@ -121,16 +121,13 @@
 
 	"notes": {
 		"Backstory":"Here is your backstory blah blah blah",
-		"Connections": {
-			"Blah monastery":"You spent 5 years at blah monastery",
-			"Blah school":"You studied here"
+		"Cons": {
+			"Linedyn Watergrass":"Linedyn Watergrass is the trusted handmaid of [insert some triton nobility/royalty]. Her skin is a shiny, pearly light blue and her hair is a deep cerulean. She often wears fancy dresses because she is *best friends* with [whatever nobility/royalty she serves].",
+			"Maria Axelath":"Maria Axelath is three quarters human and one quarter triton, and has black hair, skin with just the slightest blue tinge. She's perfect for going unnoticed.",
+			"Lady Athrodyn Danallath":"Lady Athrodyn Danallath is the daughter of an undersea noble. Her skin is aqua and her hair is a deep, greenish ultramarine. She has money, but her father is *terribly* stingy with her allowance :(((. She loves to play card games - she doesn't know much about them but somehow she always gets lucky ;) !!"
 		},
 		"Notes":"[field]",
-		"NPCs":{
-			"Friends":"[field]",
-			"Enemies":"hello blah",
-			"Allies":"[field]"
-		}
+		"NPCs":"[field]"
 	},
 
 	"actions": [
@@ -189,14 +186,12 @@
         {
             "name": "Crossbow Bolts",
             "amount": 20,
-            "consumable": "semi",
-			"hover":""
+            "consumable": "semi"
         },
         {
             "name": "Dagger",
             "amount": 2,
-            "consumable": "semi",
-			"hover":""
+            "consumable": "semi"
         },
         "Component Pouch",
         "Set of fine clothes",
@@ -207,7 +202,10 @@
         " Bedroll",
         " Mess Kit",
         " Tinderbox",
-        " Torches",
+		{
+			"name":" Torches",
+			"consumable":"yes"
+		},
 		{
 			"name":" Rations (1 day)",
 			"consumable":"yes"
@@ -215,53 +213,36 @@
         " Waterskin",
         {
 			"name":" Rope (ft)",
-			"consumable":"yes",
-			"hover":"Hempen rope"
+			"consumable":"yes"
 		}
     ],
 
 	"expendables": { 
 		"1st level spells":{
 			"type":"dot",
-			"amount":3,
+			"amount":2,
 			"hover":"",
 			"replenish":"Long rest" 
 		},
-		"Ki points":{
-			"type":"form",
-			"max":10,
-			"hover":"im so high level i have 453487594 ki points wooo",
-			"default":10,
-			"replenish":"Short rest"
-		},
-		"Days since dropping unconscious":{
-			"type":"counter",
-			"hover":"tee hee",
-			"replenish":""
+		"Fog Cloud Uses":{
+			"type":"dot",
+			"amount":1,
+			"hover":"For my Control Air and Water feature.",
+			"replenish":"Long rest"
 		}
 	},
 	"spellList": {
-		"preparable":4, 
-
-		"preparableSpells":{ 
-			"Level 1": { 
-				"Chaos Bolt":"Explain what chaos bolt does here!", 
-				"Cure wounds":"Explain cure wounds"
-			},
-			"Level 2": {
-				"Spell 1":"Help i dont know any l2 spells",
-				"Spell 2":"Help i still dont know any l2 spells"
-			}
-		},
-
 		"alwaysSpells":{ 
 			"Cantrips":{
-				"Fire Bolt":"Explain fire bolt",
-				"Guidance":"1d4 etc"
+				"Lightning Lure":"Strike at one creature that you can see within 15 feet of you. The target must succeed on a Strength saving throw or be pulled up to 10 feet in a straight line toward you and then take 1d8 lightning damage if it is within 5 feet of you.",
+				"Gust":"You pick one of the following effects:\n\nOne Medium or smaller creature that you choose must succeed on a Strength saving throw or be pushed up to 5 feet away from you.\n\nYou create a small blast of air capable of moving one small object that is neither held nor carried and that weighs no more than 5 pounds. The object is pushed up to 10 feet away from you. (can't cause damage)\n\nYou create a harmless sensory affect using air",
+				"Ray of Frost":"Make a ranged spell attack against the target. On a hit, it takes 1d8 cold damage, and its speed is reduced by 10 feet until the start of your next turn.",
+				"Shape Water":"You manipulate a 5ft cube of water you can see (within 30ft) in one of the following ways:\n\ninstantaneously move or otherwise change the flow of the water as you direct, up to 5 feet in any direction. (can't cause damage)\n\nThe water forms simple shapes and animates for an hour\n\nYou change the water's colour or opacity (in the same way throughout) for 1 hour\n\nYou freeze the water for 1 hour, if there are no creatures in it."
 			},
-			"Spells":{
-				"① Witch Bolt ©":"Explain witch bolt",
-				"② Some level 2 spell":"Explain it here"
+			"Level 1":{
+				"Fog Cloud":"You create a 20-foot-radius sphere of fog centered on a point within range. The sphere spreads around corners, and its area is heavily obscured. It lasts for the duration or until a wind of moderate or greater speed (at least 10 miles per hour) disperses it.",
+				"Disguise Self":"You make yourself – including your clothing, armor, weapons, and other belongings on your person – look different (1 hour or action to dismiss). \nCan change height by +-1ft, change appearance of weight. You can’t change your limb arrangement. \nFails to hold up to physical inspection. \n\nTo discern that you are disguised, a creature can use its action to inspect your appearance and must succeed on an Intelligence (Investigation) check against your spell save DC.",
+				"Witch Bolt":"Make a ranged spell attack against a creature within 30ft. On a hit, the target takes 1d12 lightning damage, and on each of your turns for the duration, you can use your action to deal 1d12 lightning damage to the target automatically. \n\nThe spell ends if you use your action to do anything else. The spell also ends if the target is ever outside the spell’s range or if it has total cover from you."
 			}
 		}
 	}
