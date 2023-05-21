@@ -129,7 +129,9 @@ AND ALSO ul elements that have a p element right after them (the last element in
 have a border-bottom to act as a divider.
 */
 .content-separator ~ p:not(:has(+ .content-separator)),
-ul:has(+ p) {
+ul:has(+ p),
+ul:has(+ table),
+table:not(:has(+ .content-separator)) {
     border-bottom: 2px solid var(--accent);
     padding-bottom: 5px !important;
     padding: 5px 0;
@@ -151,4 +153,18 @@ strong {
     font-size: 90%;
     padding: 0 0 0 15px;
     margin: 10px;
+}
+
+tr{
+    display: block;
+    margin: 0 10px;
+}
+
+table {
+   height: auto;
+}
+
+td, th {
+    min-width: 100px;
+    text-align: left;
 }

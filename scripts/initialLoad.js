@@ -113,7 +113,7 @@ function initialLoad() {
 
 	//page title
 	const pageTitle = document.getElementById("pageTitle")
-	pageTitle.innerHTML = charData.name + " | Character Sheet"
+	pageTitle.innerHTML = charData.pageTitle || "Unknown Character Sheet"
 
 	//basics
 	for (item in charData.basics) {
