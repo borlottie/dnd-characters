@@ -13,155 +13,135 @@
 	},
 
     "basics": {
-        "class": "Sorcerer 1",
-        "background": "Charlatan",
+        "class": "Druid 2",
+        "background": "Hermit",
         "player": "Lottie",
-        "race": "Triton",
-        "alignment": "True Neutral",
+        "race": "Dragonborn (Brass)",
+        "alignment": "Lawful Neutral",
         "xp": "N/A"
     },
 
 	"miscData": { 
         "profBonus": 2,
-        "ac": 13,
-        "acHover": "Here you can put stuff like what your AC is without armour",
-        "init": 3,
+        "ac": 14,
+        "acHover": "10+CON with no armour, 11+CON with leather armour",
+        "init": 0,
         "initHover": "", 
         "speed": "30ft",
-        "speedHover": "30ft swimming speed.",
-        "passivePerception": 17,
-		"spellStat":"cha"
+        "speedHover": "",
+        "passivePerception": 20,
+		"spellStat":"wis"
     },
 
     "abilityScores": {
-        "str": 9,
-        "dex": 16,
-        "con": 12,
-        "int": 10,
-        "wis": 12,
-        "cha": 20
+        "str": 14,
+        "dex": 10,
+        "con": 16,
+        "int": 12,
+        "wis": 17,
+        "cha": 9
     },
 
-    "saveProfs": ["con", "cha"], 
-    "skillProfs": ["persuasion", "arcana", "religion", "insight", "deception"],
-	"skillExpertise":["deception", "animal handling"], 
+    "saveProfs": ["int", "wis"], 
+    "skillProfs": ["medicine", "nature", "perception", "religion"],
+	"skillExpertise":[], 
     "otherProfs": {
-        "Languages": "Common, Primordial & dialects",
-        "Armour": "None",
-        "Weapons": "Daggers, Darts, Slings, Quarterstaffs, Light crossbows",
-        "Tools": "Disguise kit, forgery kit"
+        "Languages": "Common, Draconic, Druidic, Dwarvish",
+        "Armour": "Light Armour, Medium Armour, Shields",
+        "Weapons": "Clubs, Daggers, Darts, Javelins, Maces, Quarterstaffs, Scimitars, Sickles, Slings, Spears",
+        "Tools": "Herbalism kit"
     },
 
 	"health": {
-		"maxHp":20,
-		"hitDice": ["1d6", "2d8"]
+		"maxHp":19,
+		"hitDice": ["2d8"]
 	},
 	
 	"defenses": [ 
 		{
 			"type":"Resistance",
-			"text":"Resistance to poison damage"
-		},
-		{
-			"type":"Immunity",
-			"text":"Immune to fire damage"
-		},
-		{
-			"type":"Advantage",
-			"text":"Advantage on saving throws against being frightened"
-		},
-		{
-			"type":"Custom",
-			"text":"Cannot be put to sleep magically.",
-			"hover":"You also can't like dream etc because you literally don't sleep"
+			"text":"Resistance to fire damage"
 		}
 	],
 
     "advantages": [
         {
-            "type": "save",
-            "stat": "dex",
-            "hover": "Advantage against being tripped over idk this is hovertext",
-            "disadvantage": false
-        },
-        {
-            "type": "save",
-            "stat": "con",
-            "hover": "Disadvantage bc youre weak and sickly idk this is hovertext",
-            "disadvantage": true
-        },
-        {
-            "type": "skill",
-            "skill": "Stealth",
-            "hover": "Disadvantage in stealth because of armour hovertext",
-            "disadvantage": true
-        },
-        {
             "type": "skill",
             "skill": "Perception",
-            "hover": "Advantage on perception checks involving spell hovertext",
-            "disadvantage": false
-        },
-        {
-            "type": "skill",
-            "skill": "animal handling",
-            "hover": "IDK YOU FUCKING LIKE CATS OR SOMETHING",
+            "hover": "From Eyes of the Eagle (item)",
             "disadvantage": false
         }
     ],
 
 	"details": {
-		"Appearance":"blahblah red hair",
-		"appearanceUrl": "https://u.cubeupload.com/walrusthecowbird/1zbo5G.png",
-		"Personality Traits":"blahblah nice person",
-		"Flaws":"blahblah naive idk",
-		"Bonds":"blahblah loves her baby sister who's dead (oops)",
-		"Ideals":"blahblah peace or whatever"
+		"Appearance":"A stout dragonborn with red and brown scales. She looks sturdy and rough around the edges.",
+		"appearanceUrl": "images/myrna.png",
+		"Personality Traits":"I will often forget that social etiquette and expectations apply, abruptly ending conversations or saying things that others may consider to be out of line.",
+		"Flaws":"I remember every insult I've received and nurse a silent resentment towards anyone who's ever wronged me. There aren't many, so they're harder to forget.",
+		"Bonds":"I can't stand the stifling cities. The wilderness calls to me, even though I know I can't survive it alone.",
+		"Ideals":"Everyone should be able to handle themselves. It's not worth the trouble meddling in others' affairs."
 	},
 
     "features": {
-		"Race Features": [
+		"Draconic Ancestry": [
 			{
-				"title": "Amphibious",
-				"desc": "You can breathe air and water.",
-				"hover": "Becayse of your triton ancestry blah blah blah this would be a tooltip/popup i imagine"
+				"title": "Breath Weapon",
+				"desc": "You can use your action to exhale destructive energy. It deals fire damage in a 5’x20’ line. (AOE)",
+				"hover": "All creatures in the area must make a dexterity saving throw. The DC of this saving throw is 8 + CON + prof bonus. \nA creature takes 2d6 damage on a failed save, and half as much damage on a successful one. \nThe damage increases to 3d6 at 6th level, 4d6 at 11th, and 5d6 at 16th level. \nAfter using your breath weapon, you cannot use it again until you complete a short or long rest."
 			},
 			{
-				"title": "Emissary of the Sea",
-				"desc": "Communicate with stuff that can swim yo",
-				"hover": "You can communicate simple ideas to any Beast, Elemental, or Monstrosity that has a swimming speed. \nIt can understand your words, though you have no special ability to understand it in return."
+				"title": "Draconic Resistance",
+				"desc": "You have resistance to fire damage.",
+				"hover": "Because of Brass Dragon ancestry"
 			}
 		],
-		"Class Features": [
+		"Druid Features": [
 			{
-				"title": "Spellcasting",
-				"desc": "ur a spellcaster lmao ofc you can cast spells",
-				"hover": "pretend this has info about sorcery points."
-			},
-			{
-				"title": "Sorcerer Subclass",
-				"desc": "Subclass is idk storm sorcerer or whatever",
+				"title": "Ritual Casting",
+				"desc": "You can cast a druid spell as a ritual if that spell has the ritual tag and you have the spell prepared.",
 				"hover": ""
-			}
+			},
+			{
+				"title": "Wild Shape",
+				"desc": "",
+				"hover": "See notes panel"
+			},
+            {
+                "title":"Druidic",
+                "desc":"You know Druidic, the secret language of druids. You can speak the language and use it to leave hidden messages.",
+                "hover":"You and others who know this language automatically spot such a message. Others spot the message's presence with a successful DC 15 Wisdom (Perception) check but can't decipher it without magic."
+            },
+            {
+				"title": "Circle of Stars: Star Map",
+				"desc": "You've created a star chart as part of your heavenly studies. It is a Tiny object and can serve as a spellcasting focus for your druid spells.\nWhile holding this map, you get some benefits.",
+				"hover": "* You know the Guidance cantrip.\n* You have the Guiding Bolt spell prepared. It counts as a druid spell for you, and it doesn't count against the number of spells you can have prepared.\n* You can cast Guiding Bolt without expending a spell slot. You can do so a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.\n\nIf you lose the map, you can perform a 1-hour ceremony to magically create a replacement. This ceremony can be performed during a short or long rest, and it destroys the previous map."
+			},
+            {
+                "title":"Starry Form",
+                "desc":"As a bonus action, you can expend a use of your Wild Shape feature to take on a starry form, rather than transforming into a beast. Your starry forms are: \nARCHER. On activation, and as a BA on subsequent turns while it lasts, you can make a ranged spell attack, Target one creature within 60 feet of you. On a hit, 1d8+WIS radiant damage.\nCHALICE. When you cast a spell (w/ a spell slot) that restores HP to a creature, you or another creature within 30ft can regain 1d8+WIS hp.\nDRAGON. When you make an INT or WIS check or a CON save to retain concentration on a spell, treat a roll of 9 or lower on the d20 as a 10.",
+                "hover":"While in your starry form, you retain your game statistics, but your body becomes luminous; your joints glimmer like stars, and glowing lines connect them as on a star chart. This form sheds bright light in a 10-foot radius and dim light for an additional 10 feet. The form lasts for 10 minutes. It ends early if you dismiss it (no action required), are incapacitated, die, or use this feature again."
+            }
 		],
-		"Charlatan Background": {
-			"desc":"Youre a con artist >:))",
-			"hover":"waheyyyy"
-		}
+		"Hermit Background": [
+            {
+				"title": "Life of Seclusion",
+				"desc": "You've spent my life in near seclusion with my mother as my only companion.",
+				"hover": "We were both wanderers in spirit and she preferred nature’s company to the people in the cities so we tended towards being alone. The extra time to reflect, meditate, and hone whatever skills we wished to pursue was welcome for both of us."
+			},
+            {
+				"title": "Discovery",
+				"desc": "The quiet seclusion of your extended hermitage gave you access to a unique and powerful discovery.",
+				"hover": "I realised this truth as it was hidden in the stars. I don’t know how it got there or who put it there, but I’ve found it, and I believe it. The stars don’t lie.\n“Once the weather turns, the descent has begun. The land of the dead, and the land of the living, unless families reunite, shall become one.”"
+			}
+        ]
 	},
 
 	"notes": {
-		"Backstory":"Here is your backstory blah blah blah",
-		"Connections": {
-			"Blah monastery":"You spent 5 years at blah monastery",
-			"Blah school":"You studied here"
-		},
-		"Notes":"[field]",
-		"NPCs":{
-			"Friends":"[field]",
-			"Enemies":"hello blah",
-			"Allies":"[field]"
-		}
+        "People":"[field]",
+		"General Notes":"[field]",
+        "Wild Shape":"You can use your action to magically assume the shape of a beast that you have seen before. You can use this feature twice. You regain expended uses when you finish a short or long rest.\nYour druid level determines the beasts you can transform into, as shown in the Beast Shapes table. At 2nd level, for example, you can transform into any beast that has a challenge rating of 1/4 or lower that doesn't have a flying or swimming speed.\nYou can stay in a beast shape for a number of hours equal to half your druid level (rounded down). You then revert to your normal form unless you expend another use of this feature. You can revert to your normal form earlier by using a bonus action on your turn. You automatically revert if you fall unconscious, drop to 0 hit points, or die.\n\nWhile you are transformed, the following rules apply:\n\n* Your game statistics are replaced by the statistics of the beast, but you retain your alignment, personality, and Intelligence, Wisdom, and Charisma scores. You also retain all of your skill and saving throw proficiencies, in addition to gaining those of the creature. If the creature has the same proficiency as you and the bonus in its stat block is higher than yours, use the creature's bonus instead of yours. If the creature has any legendary or lair actions, you can't use them.\n\n* When you transform, you assume the beast's hit points and Hit Dice. When you revert to your normal form, you return to the number of hit points you had before you transformed. However, if you revert as a result of dropping to 0 hit points, any excess damage carries over to your normal form, For example, if you take 10 damage in animal form and have only 1 hit point left, you revert and take 9 damage. As long as the excess damage doesn't reduce your normal form to 0 hit points, you aren't knocked unconscious.\n\n* You can't cast spells, and your ability to speak or take any action that requires hands is limited to the capabilities of your beast form. Transforming doesn't break your concentration on a spell you've already cast, however, or prevent you from taking actions that are part of a spell, such as Call Lightning, that you've already cast.\n\n* You retain the benefit of any features from your class, race, or other source and can use them if the new form is physically capable of doing so. However, you can't use any of your special senses, such as darkvision, unless your new form also has that sense.\n\n* You choose whether your equipment falls to the ground in your space, merges into your new form, or is worn by it. Worn equipment functions as normal, but the DM decides whether it is practical for the new form to wear a piece of equipment, based on the creature's shape and size. Your equipment doesn't change size or shape to match the new form, and any equipment that the new form can't wear must either fall to the ground or merge with it. Equipment that merges with the form has no effect until you leave the form.",
+
+		"Backstory":"My mother was considerably more dragonlike than me. When I was growing up, the two of us tried to travel as much as we could (it was a little less cold then and my mother had some low firey abilities she used to keep us both warm) as neither of us found the dreary repetition of life in the cities (which were too hostile and grim for our tastes anyway) to be to our liking. She never spoke of my other parent (if indeed I had one), and I sensed that this meant I shouldn’t ask.\nDuring all our trips, we spent a lot of time looking at the stars, especially when I was very young as my mother was able to keep me warmer even when we were quite exposed. We spent many nights out in the open, gazing at the stars. I started drawing the constellations, adding my own annotations, diagrams and musings. I could feel the weighty power held by the stars and I just *knew* they held secrets if I just figured out how to unlock them.\nOur trips got shorter and shorter as my mother was grew weaker from the cold. I tried to help by learning a few small fire spells from her but despite my best efforts, they weren’t enough. Eventually, she had to leave. The cold was getting to her too much, and she couldn’t keep herself warm, let alone me. So our last trip was to a nearby city, AAA,  that she hoped I would be safe in. My mother dropped me off there before leaving to try to make her way to the elemental plane of fire or somewhere else warmer. (This was about 3 years ago.)\nThe city she left me in was heavily frequented by a group of druids (The Druidic Association for Moon-Watchers, or the “damw”) who live in its outskirts and worship the moon. These druids earn money and reputation by casting long term plant growth on the city (to promote crop growth etc) in return for a share of the produce. They also cast short term plant growth to produce fuel for themselves, which is how they’re able to live closer to the edges of the city than most. As a result, they are well respected in the city, and food and fuel are cheaper there than in other cities, however the residents of the city choose to carefully limit exports to preserve this. (They believe produce of the city should be used for the betterment of the city, and they’re not going to allow themselves to be exploited by bigger cities). The city is pretty small and has a strong community who generally align with communist ideals.\nI began spending time with the damw, admiring their abilities. Throughout the month, they spend spare spell slots casting plant growth on vines and saplings in their own hothouse, then drying out the resulting wood. On each full moon, they travel a day or so out of the city with all their firewood and build big bonfires to keep warm, spending a night or two wild shaping into wolves (many of them aspire to become lycans) and staring at the moon in general. I would go with them, taking the opportunity to study the stars like I used to and making detailed constellation maps, trying to absorb as much knowledge as I could from them. They readily shared their expertise and I began to pick up some of their habits and spells. They taught me to connect to the moon, stars and other nature, telling me that soon I would be able to forge my own path and develop new abilities separate from theirs. In the few years of time I spent with the damw, I learnt druidic, basic spellcasting and how to wild shape.\nI came to Dad a few months ago when the damw, hoping to expand and build relations with other cities, sent a group of members there asking for work and offering to teach their plant growth techniques and provide their services to the city in exchange for help upgrading AAA’s BoHD. The whole thing fell apart quickly (the nihilists were in power in Dad and they didn’t care enough to help) and the druids that had travelled to Dad dispersed, with most of them returning to AAA. But I stayed, hoping to find more different kinds of druids in Dad and learn a larger variety of skills. Since then I have been trying to stay warm and find work in Dad."
 	},
 
 	"actions": [
