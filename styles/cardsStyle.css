@@ -3,17 +3,10 @@
 /* https://www.w3schools.com/css/css3_multiple_columns.asp */
 
 /* for now, manually make this match the char it belongs with */
-:root {
-    --accent: rgb(9, 110, 141);
-    --background: rgb(193, 217, 220);
-    --text: rgb(1, 58, 79);
-}
 
 /* general style */
 body {
-    background: fixed 0 25% / cover url("../images/underwater.jpeg");
-    background-size: cover;
-    background-position: 0 25%;
+    background: var(--farBackground);
 }
 
 .wrapper {
