@@ -56,3 +56,11 @@ for (card of wikiDotCards) {
 
 cardsInitialLoadRoll20()
 cardsInitialLoadWikiDot()
+
+const expandButtons = document.getElementsByClassName("expand")
+
+for (button of expandButtons) {
+    if (button.innerText == "▼") {
+        panelExpand(button)
+    }
+}

@@ -6,7 +6,7 @@
 
 	"styles": {
 		"styleSheet":"Caster",
-		"accentColour":"rgb(13, 141, 155)",
+		"accentColour":"rgb(73, 223, 240)",
 		"backgroundColour":"rgb(1, 11, 24)",
 		"lighterBackgroundColour":"rgb(8, 28, 53)",
 		"textColour":"rgb(218, 251, 255)",

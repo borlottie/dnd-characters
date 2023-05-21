@@ -6,10 +6,10 @@
 
 	"styles": {
 		"styleSheet":"", 
-		"accentColour":"slateblue",
-		"backgroundColour":"",
-		"lighterBackgroundColour":"#eee",
-		"textColour":"darkslateblue",
+		"accentColour":"rgb(228, 63, 124)",
+		"backgroundColour":"rgb(255, 244, 248)",
+		"lighterBackgroundColour":"rgb(251, 236, 247)",
+		"textColour":"rgb(166, 34, 120)",
 		"backgroundImage":"linear-gradient(rgba(131,58,180, 0.3) 0%, rgba(180,46,119, 0.3) 20%, rgba(253,29,29, 0.3) 80%, rgba(252,176,69, 0.3) 100%)"
 	},
 
