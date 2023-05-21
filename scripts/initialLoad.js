@@ -613,7 +613,7 @@ function initialLoad() {
 
 			} else if (item.consumable == "semi") {
 				const max = document.createElement("p")
-				max.innerText = "/ " + item.amount
+				max.innerText = "/ " + item.max
 				max.className = "equipAmount inline"
 				row.appendChild(max)
 

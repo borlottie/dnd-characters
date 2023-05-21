@@ -145,63 +145,184 @@
 	},
 
 	"actions": [
+        {
+			"name":"Breath Weapon",
+			"type":"save",
+			"saveType":"dex",
+			"damageDice":"2d6",
+			"damageMod":0, 
+			"damageType":"Fire",
+			"hover":"Note the save DC is 8+CON (not wis)+proficiency.\nDeals fire damage in a 5’x20’ line.\nAll creatures in the area must make a DEX save.\nA creature takes 2d6 fire damage on a failed save, and half as much damage on a successful one. \nThe damage increases to 3d6 at 6th level, 4d6 at 11th, and 5d6 at 16th level. \nAfter using your breath weapon, you cannot use it again until you complete a short or long rest."
+		},
 		{
-			"name":"Light Crossbow",
+			"name":"Scimitar",
 			"type":"weapon",
 			"proficiency":true, 
-			"damageDice":"1d8",
-			"ability":"dex", 
+			"damageDice":"1d6",
+			"ability":"str", 
+			"damageMod":0, 
+			"damageType":"slashing",
+			"hover":"Finesse, light"
+		},
+        {
+			"name":"Sickle",
+			"type":"weapon",
+			"proficiency":true, 
+			"damageDice":"1d4",
+			"ability":"str", 
+			"damageMod":0, 
+			"damageType":"slashing",
+			"hover":"Simple, light"
+		},
+        {
+			"name":"Dagger",
+			"type":"weapon",
+			"proficiency":true, 
+			"damageDice":"1d4",
+			"ability":"str", 
 			"damageMod":0, 
 			"damageType":"piercing",
-			"hover":"Range 20 / 60 idk"
+			"hover":"Finesse, light, range, thrown. Range 20ft or 60ft with disadvantage"
 		},
 		{
-			"name":"① Witch Bolt ©",
+			"name":"Fire Bolt",
 			"type":"spell", 
-			"damageDice":"1d12",
+			"damageDice":"1d10",
 			"damageMod":0, 
-			"damageType":"lightning",
-			"hover":"30ft range. On subsequent turns while concentration lasts (max 1 minute), use your action to deal a subsequent 1d12 automatically. The spell ends if you use your action for something other than this." 
+			"damageType":"fire",
+			"hover":"Ranged spell attack, 1d10 fire damage. Ignites flammable object if not worn or carried. 120ft range." 
 		},
-		{
-			"name":"Lightning Lure ©",
-			"type":"save",
-			"saveType":"str",
+        {
+			"name":"Produce Flame",
+			"type":"spell", 
 			"damageDice":"1d8",
 			"damageMod":0, 
-			"damageType":"lightning*",
-			"hover":"15ft range. On a save failure the creature is pulled up to 10ft towards you and then, if within 5ft of you, takes the damage."
+			"damageType":"fire",
+			"hover":"For light (10ft bright, 10ft dim, lasts 10min) or attack (Ranged spell attack, 1d8 fire damage. 30ft range). Can use for light for a bit and then decide to attack." 
 		},
-		{ 
-			"desc":"Blahblahblah you do this and it pulls the person towards you",
-			"hover":"explain the various mechanics idk"
+        {
+			"name":"Poison Spray",
+			"type":"save",
+			"saveType":"con",
+			"damageDice":"1d12",
+			"damageMod":0, 
+			"damageType":"Poison",
+			"hover":"No damage on success. 10ft range."
+		},
+        {
+			"name":"Chaos Bolt",
+			"type":"spell", 
+			"damageDice":"2d8+1d6",
+			"damageMod":0, 
+			"damageType":"*",
+			"hover":"Ranged spell attack. If d8s are the same, you basically get a free casting of Chaos Bolt on a new target. Range 120ft. For damage type: pick one of the d8s.\n1 - Acid\n2 - Cold\n3 - Fire\n4 - Force\n5 - Lightning\n6 - Poison\n7 - Psychic\n8 - Thunder. \nThe damage type d8 also counts for amount of damage." 
+		},
+        {
+			"name":"Guiding Bolt",
+			"type":"spell", 
+			"damageDice":"4d6",
+			"damageMod":0, 
+			"damageType":"radiant*",
+			"hover":"Ranged spell attack, 2d6 damage on hit, AND the next attack roll made against the target before the end of your next turn has advantage. Range 120ft."
+		},
+        { 
+			"desc":"Wild Shape",
+			"hover":"Lasts for 1/2 druid level hours."
+		},
+        { 
+			"desc":"Dash, Disengage, Dodge, Help, Grapple or Shove",
+			"hover":"Dash - gain your speed in extra movement\nDisengage - Stop opportunity attacks caused from your movement\nDodge - attack rolls against you have disadvantage if you see the attacker, and advantage on DEX saves. Until start of your next turn. Ends on incapacitation or speed drops to 0.\nHelp - Give adv on next ability check to someone else OR if they’re attacking a creature within 5ft of you, give them adv on first attack roll (both must be before your next turn)\nGrapple or Shove - Make Athletics check opposing target’s acrobatics or athletics, on success the target is incapacitated, pushed 5ft away, or knocked prone. Target must be within reach and at max 1 size larger than you."
+		},
+        { 
+			"desc":"(R) Opportunity attack",
+			"hover":"If an enemy moves out of your reach. Make one melee attack against creature."
+		},
+        { 
+			"desc":"(R) Cast Absorb Elements (if prepared)",
+			"hover":"Resistance to damage type until start of next turn. The first time you hit with a melee attack on your next turn, target takes an extra 1d6 damage of triggering type.."
+		},
+        { 
+			"desc":"(BA) Cast Healing Word (if prepared)",
+			"hover":"Range 60ft. A creature of your choice that you can see gets 1d4+WIS hp back. No effect on undead or constructs."
+		},
+        { 
+			"desc":"(BA) Two Weapon Fighting",
+			"hover":"If you attack with a light melee weapon in one hand, you can use your BA to attack with a different light melee weapon in the other hand (this includes throwing as a possibility). Don’t add ability modifier to damage for 2nd attack."
+		},
+        { 
+			"desc":"(BA) Starry Form",
+			"hover":"Expend 1 wild shape to assume a starry form."
+		},
+        { 
+			"desc":"(BA) Archer",
+			"hover":"If in the ARCHER starry form:\nRanged spell attack (60ft). Radiant damage 1d8+WIS."
 		}
 	],
 
     "equipment": [ 
+        "Herbalism Kit",
+        "Leather Armour",
         {
-            "name": "Light Crossbow",
-            "amount": 2,
-            "consumable": "no",
-			"hover":""
+            "name":"Star Map",
+            "hover":"Acts as druidic focus. See features panel for boons while holding."
         },
         {
-            "name": " Blanket", 
-			"hover":""
+            "name": "Moon touched sickle",
+			"hover":"In darkness, the unsheathed blade of this sword sheds moonlight, creating bright light in a 15-foot radius and dim light for an additional 15 feet.\nThis item can also act as your druidic focus."
         },
+        "Scimitar",
         {
-            "name": "  Dagger",
-            "amount": 2,
-            "consumable": "semi"
+            "name": "Eyes of the Eagle Ⓐ",
+            "hover":"These crystal lenses fit over the eyes. While wearing them, you have advantage on Wisdom (Perception) checks that rely on sight. In conditions of clear visibility, you can make out details of even extremely distant creatures and objects as small as 2 feet across."
         },
 		{
-			"name":" Rations (1 day)",
-			"consumable":"yes",
-			"hover":"info about if you eat half rations idk"
+			"name":"Dagger",
+			"consumable":"semi",
+            "max":2
 		},
-		"Money",
-		"Fame",
-		"Glory"
+        "Explorer's pack:",
+		" Tinderbox",
+		{
+			"name":" Torches",
+			"consumable":"yes",
+            "hover":"Burns for 1 hour. Bright light 20ft, dim light extra 20ft. If you make a melee attack with a burning torch and hit, it deals 1 fire damage."
+		},
+        {
+			"name":" Rations (days)",
+			"consumable":"yes",
+            "hover": "You can go without food for a number of days equal to 3 + CON (minimum 1). At the end of each day beyond that limit, you automatically suffer one level of exhaustion.\nA normal day of eating resets the count of days without food to zero."
+		},
+        {
+			"name":" Hempen Rope (ft)",
+			"consumable":"yes",
+            "hover": "Has 2 hit points and can be burst with a DC 17 Strength check."
+		},
+        {
+			"name":" Water (days)",
+			"consumable":"semi",
+            "max":1,
+            "hover":"1 day of water: 3.8L.\nIf you drink only half that much water in a day you must succeed on a DC 15 CON save or suffer one level of exhaustion at the end of the day.\nIf you drink even less water you automatically suffer one level of exhaustion at the end of the day.\nIf you already have one or more levels of exhaustion, you take two levels in either case."
+		},
+        " Backpack",
+        " Bedroll",
+        " Mess Kit",
+		"A leatherbound notebook filled with drawings of the stars, notes, and other musings",
+        "A set of common, warm clothes",
+        "Heavy winter blanket(s)",
+        "Plain, dark cloak",
+        "Coloured pencils",
+        "Small knife",
+        "Small sewing kit with needle",
+        "Technical drawing tools:",
+        " Compass",
+        " Fine pens",
+        " Ruler",
+        {
+            "name":"Mammoth wool",
+            "consumable":"no",
+            "amount":"5kg"
+        }
+        
     ],
 
 	"expendables": { 
@@ -211,17 +332,29 @@
 			"hover":"",
 			"replenish":"Long rest" 
 		},
-		"Ki points left":{
-			"type":"form",
-			"max":10, 
-			"hover":"im so high level i have 453487594 ki points wooo",
-			"default":10,
-			"replenish":"Short rest"
+        "Chaos Bolt":{
+			"type":"dot", 
+			"amount":1, 
+			"hover":"Can also use a regular spell slot",
+			"replenish":"Long rest" 
 		},
-		"Days since dropping unconscious":{
-			"type":"counter",
-			"hover":"tee hee",
-			"replenish":"" 
+        "Guiding Bolt":{
+			"type":"dot", 
+			"amount":2, 
+			"hover":"Can also use regular spell slot",
+			"replenish":"Long rest" 
+		},
+        "Wild Shape":{
+			"type":"dot", 
+			"amount":2, 
+			"hover":"",
+			"replenish":"Short or Long rest" 
+		},
+        "Breath Weapon":{
+			"type":"dot", 
+			"amount":1, 
+			"hover":"",
+			"replenish":"Short or Long rest" 
 		}
 	},
 
@@ -230,24 +363,43 @@
 		"preparable":4, 
 
 		"alwaysSpells":{
-			"Cantrips":{ 
-				"Fire Bolt":"Explain fire bolt",
-				"Guidance":"1d4 etc"
-			},
-			"Spells":{
-				"① Witch Bolt ©":"Explain witch bolt",
-				"② Some level 2 spell":"Explain it here"
+            "Cantrips":{
+                "Fire Bolt":"Ranged spell attack, 1d10 fire damage. Ignites flammable object if not worn or carried. 120ft range.",
+                "Produce Flame":"For light (10ft bright, 10ft dim, lasts 10min) or attack (Ranged spell attack, 1d8 fire damage. 30ft range)",
+                "Resistance":"Range: Touch. Duration: up to 1 minute (C). One willing target gets a d4 added to a saving throw of their choice (added before or after roll) made within the duration.",
+                "Poison Spray":"CON save. 1d12 damage (none on success). Range 10ft.",
+                "Guidance":"Must be holding star map. Range: Touch. Duration: up to 1 minute (C). One willing target gets a d4 added to an ability check of their choice (added before or after roll) made within the duration."
+            },
+			"Level 1":{ 
+				"Chaos Bolt":"Ranged spell attack, 2d8+1d6 damage (for type see actions/spell card). If d8s are the same, you basically get a free casting of Chaos Bolt on a new target. Range 120ft.",
+				"Guiding Bolt":"Ranged spell attack, 2d6 damage on hit, AND the next attack roll made against the target before the end of your next turn has advantage. Range 120ft."
 			}
 		},
 
 		"preparableSpells":{
 			"Level 1": { 
-				"Chaos Bolt":"Explain what chaos bolt does here!",
-				"Cure wounds":"Explain cure wounds"
-			},
-			"Level 2": {
-				"Spell 1":"Help i dont know any l2 spells",
-				"Spell 2":"Help i still dont know any l2 spells"
+				"Absorb Elements":"REACTION. When you take acid, cold, fire, lightning or thunder damage:\nResistance to damage type until start of next turn. The first time you hit with a melee attack on your next turn, target takes an extra 1d6 damage of triggering type.",
+				"Animal Friendship":"Range 30ft. Duration 24h. On a beast you can see that can see and hear you, and has intelligence < 4. WIS save or be charmed by you. (If you or a companion harms target, spell ends.)",
+                "Beast Bond ©":"Range Touch. Duration 10min. You establish a telepathic link with one beast you touch that is friendly to you or charmed by you that has an intelligence < 4. The link is active while you and beast see each other. It can understand your messages and communicate emotions and concepts. Beast gets adv on attack rolls against creature within 5ft of you that you can see",
+                "Charm Person":"Range 30ft. Duration 1hr. WIS save (with adv if you or companions fighting it) or be charmed by you (they regard you as friendly acquaintance) until spell ends or you or companions harms it. Upon spell end, they know they were charmed.",
+                "Create or Destroy Water":"Range 30ft. Create up to 38L water in an open container or as rain in 30ft cube (extinguishes flames). OR Destroy up to 38L water in open container or fog in a 30ft cube",
+                "Cure Wounds":"Range Touch. Creature regains 1d8+WIS hp. No effect on undead or constructs.",
+                "Detect Magic © ®":"Duration 10min. You can sense magic within 30ft of you and use your action to see a faint aura around any visible creature or object that bears magic, and see its school. The spell is blocked by 1ft stone, 1” of metal, a thin sheet of lead, or 3ft of wood or dirt.",
+                "Detect Poison & Disease ©":"Duration 10min. You can sense the presence and location of poisons, poisonous creatures and diseases within 30ft of you. You can also identify the kind of each. The spell is blocked by 1ft stone, 1” of metal, a thin sheet of lead, or 3ft of wood or dirt.",
+                "Earth Tremor":"You cause a tremor in the ground in a 10ft radius centred on yourself. All creatures other than you: DEX save or 1d6 bludgeoning damage & knocked prone. If the ground is loose earth or stone, it becomes difficult terrain until cleared",
+                "Entangle ©":"90ft range. Duration 1min. Grasping weeds and vines sprout from a 20ft square, making the area difficult terrain for the duration. Creatures in the area upon casting: STR save or be restrained until the spell ends. A restrained creature can use its action to make STR check against spell save DC and be free upon success. Plants wilt away after duration.",
+                "Faerie Fire ©":"Range 60ft. Duration 1min. Every object in a 20ft cube within range is outlined in coloured light. A creature in the area when the spell is cast must DEX save or be outlined as well. Being outlined means shedding 10ft of dim light. Attack rolls against an affected creature/object have advantage if visible, and the creature/object can’t benefit from being invisible.",
+                "Fog Cloud ©":"Range 120ft. Duration 1h. Create a 20ft radius sphere (centre within range) of fog. Spreads around corners and its area is heavily obscured. Lasts for the duration or until dispersed by wind >10pmh.",
+                "Goodberry":"Up to 10 berries appear in your hand and are infused with magic. A creature can use its action to eat 1 berry, which restores 1 hp and provides enough nourishment for 1 day. The berries lose their potency if they haven’t been consumed after 24 hours.",
+                "Healing Word":"BONUS ACTION. Range 60ft. A creature of your choice that you can see gets 1d4+WIS hp back. No effect on undead or constructs.",
+                "Ice Knife":"60ft range. Ranged spell attack, on a hit 1d10 piercing damage. Then (hit or miss) target and each creature within 5ft: DEX save or 2d6 cold damage",
+                "Jump":"Range Touch. Duration 1min. Touch a creature, jump distance is tripled until spell ends.",
+                "Longstrider":"Range Touch. Duration 1h. The target’s speed increases by 10ft until the spell ends.",
+                "Prot. from Evil & Good ©":"Range Touch. Duration 10min. One willing creature you touch is protected against: aberrations, celestials, elementals, fey, fiends, and undead. these creatures have disadvantage on attack rolls against the target. The target also can't be charmed, frightened, or possessed by them. If the target is already charmed, frightened, or possessed by such a creature, they have adv on any saving throws against that effect.",
+                "Purify Food and Drink ®":"Range 10ft. All nonmagical food and drink within a 5ft radius sphere centred on a point of your choice is purified and rendered free of poison and disease.",
+                "Snare":"CASTING TIME 1 MINUTE. Range Touch. Use cord or rope to create a 5ft radius circle on a flat surface. When you finish casting, it becomes a magical trap. Nearly invisible, requires investigation check against spell save DC to find. Triggers when a Small or larger creature moves into it. \nCreature: DEX save or be restrained and hoisted in the air, hangs upside down 3ft above surface. At the end of each of its turns it can again make a DEX save with disadvantage to break free OR another creature that can reach it can beat your spell save DC with an arcana check.",
+                "Speak with Animals ®":"Duration 10min. You can comprehend and verbally communicate with beasts for the duration. Beasts are still limited by their intelligence but can give info about nearby locations and monsters, including whatever they have perceived within the past day. They may be persuaded to perform a small favour for you.",
+                "Thunderwave":"Range 15ft cube around self. Each creature within it: CON save or 2d8 thunder damage (halved on success) and pushed 10ft away from you (0 on success). Unsecured objects within the area are automatically pushed 10ft away. Thunderous boom emitted audible to 300ft."
 			}
 		}
 		

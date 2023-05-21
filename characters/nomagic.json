@@ -163,13 +163,13 @@
         },
         {
             "name": "Crossbow Bolts",
-            "amount": 20,
+            "max": 20,
             "consumable": "semi",
 			"hover":""
         },
         {
             "name": "Dagger",
-            "amount": 2,
+            "max": 2,
             "consumable": "semi",
 			"hover":""
         },

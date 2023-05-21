@@ -185,13 +185,13 @@
         },
         {
             "name": "Crossbow Bolts",
-            "amount": 20,
+            "max": 20,
             "consumable": "semi"
         },
         {
             "name": "Dagger",
             "amount": 2,
-            "consumable": "semi",
+            "max": "semi",
 			"hover":"Range 20ft (normal) / 60ft (disadvantage). Finesse, light, range, thrown"
         },
         "Component Pouch",

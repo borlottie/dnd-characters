@@ -211,7 +211,7 @@
         },
         {
             "name": "  Dagger",
-            "amount": 2,
+            "max": 2,
             "consumable": "semi"
         },
 		{

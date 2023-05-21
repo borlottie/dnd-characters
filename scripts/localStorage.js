@@ -374,12 +374,12 @@ function dataRetrieve() {
     }
 
 	//notes
-	const notesValues = localStorageProxy.notes
+	const notesValues = localStorageProxy.notes || []
 	const notesContainer = document.getElementById("notes")
 	const notesTextAreas = notesContainer.getElementsByTagName("textarea")
 
 	for (let thisFieldNum in notesTextAreas) {
-		notesTextAreas[thisFieldNum].value = notesValues[thisFieldNum]
+		notesTextAreas[thisFieldNum].value = notesValues[thisFieldNum] || ""
 	}
 
 	storageLoad()
