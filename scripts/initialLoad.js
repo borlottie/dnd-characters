@@ -462,6 +462,11 @@ function initialLoad() {
 				row.appendChild(dot)
 			}
 		}
+
+		const refresh = document.createElement("p")
+		refresh.innerText = " / "+exp.replenish
+		refresh.className = "inline"
+		row.appendChild(refresh);
 		expendablesContainer.appendChild(row)
 	}
 
