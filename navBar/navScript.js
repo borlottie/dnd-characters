@@ -6,6 +6,8 @@ function navScript() {
     const pages = {
         "Annalyn": "index.html?src=annalyn&nav",
         "Spells": "cards.html?nav",
+        "spacer2":"",
+        "Myrna":"index.html?src=myrna&nav",
         "spacer1": "", //anything with a blank url is a spacer
         "Template": "index.html?src=template&nav",
         "No Magic": "index.html?src=nomagic&nav"
