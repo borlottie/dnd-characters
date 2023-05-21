@@ -152,7 +152,7 @@ input, textarea {
 }
 
 textarea {
-    border-color: var(--accent);
+    border: 1.5px solid var(--accent);
 }
 
 input[list] { /*dropdowns */
