@@ -47,10 +47,12 @@ function wikiDotCleanup(card) {
     spellLists.remove()
 }
 
-cardsInitialLoadRoll20()
-cardsInitialLoadWikiDot()
 
 const wikiDotCards = document.getElementsByClassName("main-content")
 for (card of wikiDotCards) {
     wikiDotCleanup(card)
 }
+
+
+cardsInitialLoadRoll20()
+cardsInitialLoadWikiDot()
