@@ -9,7 +9,7 @@
 		"backgroundColour":"rgb(235, 216, 196)",
 		"lighterBackgroundColour":"rgb(250, 235, 219)",
 		"textColour":"rgb(125, 27, 5)",
-		"backgroundImage":"fixed 50% 10% / cover url(\"../images/snow1.jpg\")"
+		"backgroundImage":"linear-gradient(rgba(240, 250, 255, 0.7) 0%, rgba(255,255,255,0.7) 100%), fixed 50% 10% / cover url(\"../images/snow5.jpg\")"
 	},
 
     "basics": {
