@@ -67,7 +67,7 @@
     "advantages": [],
 
 	"details": { 
-		"Appearance":"Annalyn has eggshell blue skin and deep green hair. However she has many other characters she often plays which have different appearances. She is 4'10\".",
+		"Appearance":"Annalyn has eggshell blue skin and deep green hair. However she has many other characters she often plays which have different appearances. She is 4'10\".\n(Art stolen from google images)",
 		"appearanceUrl": "images/annaline.png",
 		"Personality Traits":"Flattery is my preferred trick for getting what I want. When I look pretty and give compliments, I can achieve anything.",
 		"Ideals":"Independence. I am a free spirit – no one tells me what to do.",
@@ -122,9 +122,9 @@
 	"notes": {
 		"Backstory":"Here is your backstory blah blah blah",
 		"Cons": {
-			"Linedyn Watergrass":"Linedyn Watergrass is the trusted handmaid of [insert some triton nobility/royalty]. Her skin is a shiny, pearly light blue and her hair is a deep cerulean. She often wears fancy dresses because she is *best friends* with [whatever nobility/royalty she serves].",
-			"Maria Axelath":"Maria Axelath is three quarters human and one quarter triton, and has black hair, skin with just the slightest blue tinge. She's perfect for going unnoticed.",
-			"Lady Athrodyn Danallath":"Lady Athrodyn Danallath is the daughter of an undersea noble. Her skin is aqua and her hair is a deep, greenish ultramarine. She has money, but her father is *terribly* stingy with her allowance :(((. She loves to play card games - she doesn't know much about them but somehow she always gets lucky ;) !!"
+			"Linedyn Lahronath":"Linedyn Lahronath is the trusted handmaid of [insert some triton nobility/royalty]. Her skin is light blue and her hair is a deep cerulean.",
+			"Maria Watergrass":"Maria Watergrass is three quarters human and one quarter triton, and has black hair, skin with just the slightest blue tinge. She's perfect for going unnoticed.",
+			"Lady Athrodyn Danallath":"Lady Athrodyn Danallath is the daughter of an undersea noble. Her skin is aqua and her hair is a pearly bluish white (very rare). She has money, but her father is *terribly* stingy with her allowance :(((. She loves to play card games - she doesn't know much about them :(( but somehow she always gets lucky ;) !!"
 		},
 		"Notes":"[field]",
 		"NPCs":"[field]"
