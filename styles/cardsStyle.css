@@ -9,6 +9,7 @@
     --text: rgb(1, 58, 79);
 }
 
+/* general style */
 body {
     background: fixed 0 25% / cover url("../images/underwater.jpeg");
     background-size: cover;
@@ -30,6 +31,7 @@ body {
     background-color: var(--background);
 }
 
+/* roll20 style */
 .booktemplate {
     font-size: 90%;
 }
@@ -45,28 +47,6 @@ body {
 
 .body {
     margin: 10px 8px 5px 8px;
-}
-
-.main-content {
-    padding: 10px 8px 5px 8px;
-    width: calc(100% - 20px - 4px - 16px);
-}
-
-.content-separator ~ p:not(:has(+ .content-separator)) {
-    border-bottom: 2px solid var(--accent);
-    padding: 5px 0;
-}
-
-.main-content p {
-    font-size: 90%;
-    margin: 5px;
-}
-
-strong {
-    line-height: 150%;
-    display: inline-block;
-    font-size: 100%;
-    font-weight: bolder;
 }
 
 div.taper,
@@ -141,4 +121,41 @@ h1 {
 
 .booktemplate .subtitle {
     font-style: italic;
+}
+
+/* Wikidot style */
+.main-content {
+    padding: 10px 8px 5px 8px;
+    width: calc(100% - 20px - 4px - 16px);
+}
+
+/* p elements with a content-separator as any previous sibling
+BUT their immediate next sibling isn't another content-separator (not the last element in the card)
+AND ALSO ul elements that have a p element right after them (the last element in the list but not in the card)
+
+have a border-bottom to act as a divider.
+*/
+.content-separator ~ p:not(:has(+ .content-separator)),
+ul:has(+ p) {
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 5px !important;
+    padding: 5px 0;
+}
+
+.main-content p {
+    font-size: 90%;
+    margin: 5px;
+}
+
+strong {
+    line-height: 150%;
+    display: inline-block;
+    font-size: 100%;
+    font-weight: bolder;
+}
+
+.main-content ul {
+    font-size: 90%;
+    padding: 0 0 0 15px;
+    margin: 10px;
 }
