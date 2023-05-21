@@ -1,7 +1,6 @@
-function cardsInitialLoad() {
+function cardsInitialLoadRoll20() {
     const cards = document.getElementsByClassName("listResult booktemplate closed single expansion0")
     for (let card of cards) {
-        console.log(card)
         const nameDiv = card.getElementsByClassName("name")[0]
         const dropdownArrow = expandButton()
         
@@ -16,4 +15,42 @@ function cardsInitialLoad() {
     }
 }
 
-cardsInitialLoad()
+function cardsInitialLoadWikiDot() {
+    const cards = document.getElementsByClassName("main-content")
+    for (let card of cards) {
+        const nameDiv = card.getElementsByClassName("page-title")[0]
+        const dropdownArrow = expandButton()
+        
+        const firstEl = nameDiv.firstElementChild
+        nameDiv.insertBefore(dropdownArrow, firstEl)
+
+        const hideableSection = nameDiv.nextElementSibling
+        hideableSection.classList.add("contractible")
+    }
+}
+
+function wikiDotCleanup(card) {
+    const adLoaders = card.getElementsByClassName("wd-adunit wd-ad-np")
+    for (div of adLoaders) {
+        const script = div.nextElementSibling;
+        script.remove()
+        div.remove()
+    }
+
+    const thisContent = card.getElementsByClassName("page-title")[0].nextElementSibling
+
+    while (thisContent.nextElementSibling) {
+        thisContent.nextElementSibling.remove()
+    }
+
+    const spellLists = thisContent.lastElementChild.previousElementSibling
+    spellLists.remove()
+}
+
+cardsInitialLoadRoll20()
+cardsInitialLoadWikiDot()
+
+const wikiDotCards = document.getElementsByClassName("main-content")
+for (card of wikiDotCards) {
+    wikiDotCleanup(card)
+}

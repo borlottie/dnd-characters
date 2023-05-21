@@ -19,16 +19,19 @@ body {
     column-width: 400px;
   }
   
-.booktemplate {
+.booktemplate, .main-content {
     font-family: Arial, Helvetica, sans-serif;
     content: "th level";
-    width: calc(100% - 20px);
+    width: calc(100% - 20px - 4px);
     margin: 15px 10px;
     border: 2px solid var(--accent);
     border-radius: 5px;
     display: inline-block;
-    font-size: 90%;
     background-color: var(--background);
+}
+
+.booktemplate {
+    font-size: 90%;
 }
 
 .booktemplate.single div.list-hide.inapp-hide.single-view.slide-down.content-toggle,
@@ -36,18 +39,34 @@ body {
     display: block !important;
 }
 
-.booktemplate.single-view {
-    margin: 5px 10px 5px 10px;
-    /* font-size: 0.5rem; */
-    border: 2px solid var(--accent);
-}
-
 .gold {
     visibility: hidden;
 }
 
 .body {
-    margin: 10px 5px 5px 8px;
+    margin: 10px 8px 5px 8px;
+}
+
+.main-content {
+    padding: 10px 8px 5px 8px;
+    width: calc(100% - 20px - 4px - 16px);
+}
+
+.content-separator ~ p:not(:has(+ .content-separator)) {
+    border-bottom: 2px solid var(--accent);
+    padding: 5px 0;
+}
+
+.main-content p {
+    font-size: 90%;
+    margin: 5px;
+}
+
+strong {
+    line-height: 150%;
+    display: inline-block;
+    font-size: 100%;
+    font-weight: bolder;
 }
 
 div.taper,
@@ -103,10 +122,13 @@ dir {
     padding-inline-start: 40px;
 }
 
-.booktemplate .name h1 {
+.booktemplate .name h1,
+.page-title span {
     font-weight: bolder;
     text-transform: capitalize;
     margin: 0;
+    font-size: 200%;
+    color: var(--accent);
 }
 
 h1 {
