@@ -82,16 +82,16 @@ function update() {
 	const equipmentInputs = equipmentContainer.getElementsByTagName("input")
 	const equipmentTotals = {}
 	for (input of equipmentInputs) {
-		if (input.parentElement.parentElement != moneyContainer) { //if it's not a money total
+		if (input.parentElement.parentElement != moneyContainer && input.type == "number") { //if it's not a money total
 			const inputTitle = input.parentElement.getElementsByTagName("p")[0].innerText //get item name
 			let inputValue = input.value //get value we want to write
 
 			inputValue = parseInt(inputValue) //parse it as int
 			inputValue = (inputValue < 0 ? 0 : inputValue) //if it's too low, fix
 
-			const prevSib = input.previousElementSibling
-			if (prevSib.classList.contains("equipAmount")) { //if there's a max
-				const maxAmount = parseInt(prevSib.innerText.substring(1)) || Infinity //work out what the max is
+			const nextSib = input.nextElementSibling
+			if (nextSib && nextSib.classList.contains("equipAmount")) { //if there's a max
+				const maxAmount = parseInt(nextSib.innerText.substring(1)) || Infinity //work out what the max is
 				inputValue = (inputValue > maxAmount ? maxAmount : inputValue) //if too high, reset
 
 				//default to max if possible
@@ -286,7 +286,7 @@ function dataRetrieve() {
 	const equipmentInputs = equipmentContainer.getElementsByTagName("input")
 
 	for (input of equipmentInputs) {
-		if (input.parentElement.parentElement != moneyContainer) { //if it's not a money total
+		if (input.parentElement.parentElement != moneyContainer && input.type == "number") { //if it's not a money total
 
 			const inputTitle = input.parentElement.getElementsByTagName("p")[0].innerText
 

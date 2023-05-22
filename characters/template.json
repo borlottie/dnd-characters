@@ -200,6 +200,10 @@
 	],
 
     "equipment": [ 
+		{
+            "name": "Scimitar +2",
+			"attunement":true
+        },
         {
             "name": "Light Crossbow",
             "amount": 2,
@@ -209,6 +213,10 @@
         {
             "name": " Blanket", 
 			"hover":""
+        },
+		{
+            "name": " Magical Compass",
+			"attunement":true
         },
         {
             "name": "  Dagger",

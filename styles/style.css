@@ -146,10 +146,6 @@ table:has(.stat), .iclassblock table {
     margin-top: 20%;
 } 
 
-.equipAmount {
-    float: right;
-}
-
 input, textarea {
     background-color: var(--lightBackground);
     border-radius: 3px;
@@ -187,6 +183,11 @@ input.equipAmount, input[type="number"].expendable {
 
 p.equipAmount:has(+input), input.expendable + p {
     padding-left: 0;
+}
+
+input.equipAmount,
+p + p.equipAmount {
+    margin-left: auto;
 }
 
 .iconditions, .ispellstats {

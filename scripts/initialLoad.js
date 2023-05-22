@@ -568,22 +568,18 @@ function initialLoad() {
 	//equipment
 	const equipContainer = document.getElementById("equipment")
 	for (let item of charData.equipment) {
+		const row = document.createElement("div")
+		row.className = "left compact vcenter"
 
+		//get item's name and hover - either a string element in the list, or the name key of a dict element
 		let itemName, itemHover;
 		if (typeof(item) == "string") {
 			itemName = item
 			itemHover = ""
 		} else {
 			itemName = item.name
-			itemHover = item.hover
+			itemHover = item.hover || ""
 		}
-
-		//p element for normal equipment, h4 element if it seems to be a header (ends in a colon)
-		const text = document.createElement(itemName.at(-1) == ":" ? "h4" : "p")
-		text.innerText = itemName
-		text.className = "inline"
-
-		const row = document.createElement("div")
 
 		//indents
 		const spacesRemoved = itemName.trimLeft()
@@ -594,9 +590,20 @@ function initialLoad() {
 			row.appendChild(indent)
 		}
 
+		// if item has attunement
+		if (typeof(item) == "object" && item.attunement) {
+			const attunementBox = checkBoxDot()
+			row.appendChild(attunementBox)
+		}
+
+		//p element for normal equipment, h4 element if it seems to be a header (ends in a colon)
+		const text = document.createElement(itemName.at(-1) == ":" ? "h4" : "p")
+		text.innerText = itemName
+		text.className = "inline"
+
 		row.appendChild(text)
 		row.title = itemHover || ""
-		row.className = "left"
+
 		if (typeof(item) == "object" && "consumable" in item) {
 			if (item.consumable == "yes") {
 				const amount = document.createElement("input")
@@ -613,17 +620,18 @@ function initialLoad() {
 				row.appendChild(amount)
 
 			} else if (item.consumable == "semi") {
-				const max = document.createElement("p")
-				max.innerText = "/ " + item.max
-				max.className = "equipAmount inline"
-				row.appendChild(max)
-
 				const amount = document.createElement("input")
 				amount.type = "number"
 				amount.style.width = "4ch"
 				amount.className = "equipAmount";
 				amount.setAttribute("onchange", "update()")
 				row.appendChild(amount)
+				
+				const max = document.createElement("p")
+				max.innerText = "/ " + item.max
+				max.className = "equipAmount inline"
+				row.appendChild(max)
+
 			}
 		}
 		equipContainer.appendChild(row)
