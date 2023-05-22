@@ -201,8 +201,8 @@ p.equipAmount:has(+input), input.expendable + p {
     width: 33%;
 }
 
-.indent {
-    width: 10px;
+.iactions tr {
+    height: 25px;
 }
 
 #headshot {
@@ -312,6 +312,15 @@ button.expand:active {
     background-color: var(--background);
 }
 
+textarea {
+    min-width: calc(100% - 20px - 4px); /* 20px from the padding, 4px from the border */
+    max-width: calc(100% - 20px - 4px);
+}
+
+.inotes textarea {
+    height: 100px;
+}
+
 img {
     width: 100%;
 }
@@ -320,8 +329,6 @@ img {
     height: 20px;
 }
 
-textarea {
-    min-width: calc(100% - 20px - 4px); /* 20px from the padding, 4px from the border */
-    max-width: calc(100% - 20px - 4px);
-    height: 100px;
+.indent {
+    width: 10px;
 }
