@@ -10,6 +10,7 @@
             --background: rgb(193, 217, 220);
             --text: rgb(1, 58, 79);
             --farBackground: fixed 0 25% / cover url("../images/underwater.jpeg");
+            --lightBackground: rgb(220, 240, 245);
         }
     </style>
 
@@ -664,6 +665,12 @@
             <div class="page-options-container"></div>
             <div id="action-area" style="display: none;"></div>
         </div>
+    </div>
+    <div class="center">
+        <button onclick="toggleAll('contract')" class="utility">Contract all</button>
+        <button onclick="toggleAll('expand')" class="utility">Expand all</button>
+        <button onclick="saveFolds()" class="utility">Save This Layout</button>
+        <button onclick="loadFolds()" class="utility">Load Saved Layout</button>
     </div>
     <script src="scripts/functions.js"></script>
     <script src="scripts/cards.js"></script>

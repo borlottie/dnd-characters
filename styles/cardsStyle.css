@@ -161,7 +161,7 @@ tr{
 }
 
 table {
-   height: auto;
+   font-size: 90%;
 }
 
 td, th {

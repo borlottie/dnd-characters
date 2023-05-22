@@ -1,3 +1,4 @@
+//adds dropdowns and contractibility to all the roll20 cards
 function cardsInitialLoadRoll20() {
     const cards = document.getElementsByClassName("listResult booktemplate closed single expansion0")
     for (let card of cards) {
@@ -15,6 +16,7 @@ function cardsInitialLoadRoll20() {
     }
 }
 
+//adds dropdowns and contractibility to all the wikidot cards
 function cardsInitialLoadWikiDot() {
     const cards = document.getElementsByClassName("main-content")
     for (let card of cards) {
@@ -29,6 +31,7 @@ function cardsInitialLoadWikiDot() {
     }
 }
 
+// cleans up a given wikidot card
 function wikiDotCleanup(card) {
     const adLoaders = card.getElementsByClassName("wd-adunit wd-ad-np")
     for (div of adLoaders) {
@@ -47,20 +50,53 @@ function wikiDotCleanup(card) {
     spellLists.remove()
 }
 
+//expands or contracts all cards (state = "expand" or "contract")
+function toggleAll(state) {
+    buttonsMatch = (state == "expand") ? "▶" : "▼"
 
+    const expandButtons = document.getElementsByClassName("expand")
+    for (button of expandButtons) {
+        if (button.innerText == buttonsMatch) {
+            panelExpand(button)
+        }
+    }
+}
+
+//saves the states of all the cards on the page to localstorage
+function saveFolds() {
+    let buttonStates = "" //quick and dirty
+    const pageName = window.location.href.split("?")[0].split("/").pop() //remove query string and keep only filename
+
+    const expandButtons = document.getElementsByClassName("expand")
+    for (button of expandButtons) {
+        buttonStates += button.innerText //pushes current status in the form of its innertext
+    }
+    console.log(buttonStates)
+    localStorage.setItem(pageName, buttonStates)
+}
+
+//loads the states of all the cards on the page from localstorage
+function loadFolds() {
+    const pageName = window.location.href.split("?")[0].split("/").pop() //remove query string and keep only filename
+    const buttonStates = localStorage.getItem(pageName) || ""
+
+    const expandButtons = document.getElementsByClassName("expand")
+    for (let buttonNum = 0; buttonNum < expandButtons.length; buttonNum++) {
+        if (expandButtons[buttonNum].innerText != buttonStates[buttonNum]) {
+            panelExpand(expandButtons[buttonNum])
+        }
+    }
+}
+
+// Clean up all the wikidot cards
 const wikiDotCards = document.getElementsByClassName("main-content")
 for (card of wikiDotCards) {
     wikiDotCleanup(card)
 }
 
-
+// 'load' all the cards (add dropdowns)
 cardsInitialLoadRoll20()
 cardsInitialLoadWikiDot()
 
-const expandButtons = document.getElementsByClassName("expand")
-
-for (button of expandButtons) {
-    if (button.innerText == "▼") {
-        panelExpand(button)
-    }
-}
+//load last saved state
+loadFolds()

@@ -7,6 +7,7 @@
         :root {
             --accent: rgb(187, 67, 20);
             --background: rgb(235, 216, 196);
+            --lightBackground: rgb(250, 235, 219);
             --text: rgb(125, 27, 5);
             --farBackground: linear-gradient(rgba(240, 250, 255, 0.7) 0%, rgba(255, 255, 255, 0.7) 100%),
                 fixed 50% 10% / cover url("../images/snow5.jpg");
@@ -21,8 +22,8 @@
     <!-- Generates navbar -->
     <script id="navBarPlaceholder" src="navBar/navScript.js"></script>
 
-    <!-- steal from roll20 pages -->
     <div class="wrapper">
+
         <!-- Draft horse -->
         <div class="listResult booktemplate closed single expansion0">
 
@@ -3688,6 +3689,13 @@
             <div class="page-options-container"></div>
             <div id="action-area" style="display: none;"></div>
         </div>
+
+    </div>
+    <div class="center">
+    <button onclick="toggleAll('contract')" class="utility">Contract all</button>
+        <button onclick="toggleAll('expand')" class="utility">Expand all</button>
+        <button onclick="saveFolds()" class="utility">Save This Layout</button>
+        <button onclick="loadFolds()" class="utility">Load Saved Layout</button>
     </div>
     <script src="scripts/functions.js"></script>
     <script src="scripts/cards.js"></script>
