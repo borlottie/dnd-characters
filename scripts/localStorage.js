@@ -300,7 +300,7 @@ function dataRetrieve() {
 			input.value = (!equipmentTotals[inputTitle] && equipmentTotals[inputTitle] !== 0) ? (maxTotal || 0) : equipmentTotals[inputTitle]
 
 			const inputLen = input.value.toString().length
-			input.style.width = inputLen+2+"ch"
+			input.style.width = inputLen+3+"ch"
 		}
 	}
 

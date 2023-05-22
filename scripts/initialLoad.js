@@ -578,7 +578,8 @@ function initialLoad() {
 			itemHover = item.hover
 		}
 
-		const text = document.createElement("p")
+		//p element for normal equipment, h4 element if it seems to be a header (ends in a colon)
+		const text = document.createElement(itemName.at(-1) == ":" ? "h4" : "p")
 		text.innerText = itemName
 		text.className = "inline"
 

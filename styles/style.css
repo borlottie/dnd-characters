@@ -332,3 +332,7 @@ img {
 .indent {
     width: 10px;
 }
+
+.bold {
+    font-weight: bold;
+}
