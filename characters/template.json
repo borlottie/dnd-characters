@@ -213,7 +213,11 @@
 			"attunement":true
         },
         {
-            "name": "Light Crossbow",
+            "name": "Backpack:",
+			"hover":""
+        },
+		{
+            "name": " Staff",
             "amount": 2,
             "consumable": "no",
 			"hover":""

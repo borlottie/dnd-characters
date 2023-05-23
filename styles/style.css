@@ -47,6 +47,15 @@ body {
     margin: 10px 0 0 0;
 }
 
+.spacer {
+    height: 20px;
+}
+
+.indent {
+    width: 10px;
+}
+
+
 .center {
     display: flex;
     align-items: center;
@@ -73,6 +82,16 @@ body {
     margin-bottom: 0;
 }
 
+.invis {
+    margin: 0;
+    padding: 0;
+}
+
+.fullWidth {
+    width: 100%;
+}
+
+/* #region headings */
 h2, h3 {
     text-transform: uppercase;
     font-weight: bold;
@@ -102,6 +121,9 @@ h4 {
     filter: opacity(60%);
 }
 
+/* #endregion */
+
+/* #region sizes */
 .big {
     font-size: 100%;
 }
@@ -114,11 +136,9 @@ h4 {
     font-size: 70%;
 }
 
-.invis {
-    margin: 0;
-    padding: 0;
-}
+/* #endregion */
 
+/* #region tables */
 table {
     table-layout: auto;
     width: 100%;
@@ -133,10 +153,6 @@ table:has(.stat), .iclassblock table {
     height: 100%;
 }
 
-.fullWidth {
-    width: 100%;
-}
-
 .stat {
     height: 90%;
     margin: 0;
@@ -145,6 +161,9 @@ table:has(.stat), .iclassblock table {
 .stat + .stat { /* a stat not at the top */
     margin-top: 20%;
 } 
+/* #endregion */
+
+/* #region inputs & buttons */
 
 input, textarea {
     background-color: var(--lightBackground);
@@ -175,85 +194,6 @@ input[type="number"] {
 
 input[type="number"]:not(.huge, .small, .big) {
     font-size: 80%;
-}
-
-input.equipAmount, input[type="number"].expendable {
-    margin: 4px 0 4px 4px;
-}
-
-p.equipAmount:has(+input), input.expendable + p {
-    padding-left: 0;
-}
-
-input.equipAmount,
-p + p.equipAmount {
-    margin-left: auto;
-}
-
-.iconditions, .ispellstats {
-    display: flex;
-}
-
-.iconditions > div {
-    width: 50%;
-}
-
-.ispellstats div {
-    width: 33%;
-}
-
-.iactions tr {
-    height: 25px;
-}
-
-#headshot {
-    width: calc(100% - 6px - 10px);
-    margin: 5px;
-    border: 3px solid var(--accent);
-    border-radius: 10px;
-}
-
-#money {
-    width: 64px;
-    float: left;
-}
-
-#money div {
-    margin: 3px;
-}
-
-#local {
-    height: 500px;
-    width: 70%;
-}
-
-.dot {
-    height: 12px;
-    width: 12px;
-    background-color: var(--background);
-    padding: 0;
-    border-radius: 50%;
-    border: 1.5px solid var(--accent);
-    position: relative;
-    top: 3px;
-    margin-right: 5px;
-}
-
-.dot.filled {
-    background-color: var(--accent);
-}
-
-.dot.circled {
-    box-shadow: 0 0 0 3px var(--text);
-}
-
-.compact {
-    padding: 2px;
-}
-
-tr.compact {
-    display: block;
-    height: 25px;
 }
 
 button.utility {
@@ -322,18 +262,91 @@ textarea {
     height: 100px;
 }
 
+/* #endregion */
+
+input.equipAmount, input[type="number"].expendable {
+    margin: 4px 0 4px 4px;
+}
+
+p.equipAmount:has(+input), input.expendable + p {
+    padding-left: 0;
+}
+
+input.equipAmount,
+p + p.equipAmount,
+h4 + p.equipAmount {
+    margin-left: auto;
+}
+
+/* #region specifics */
+.iconditions, .ispellstats {
+    display: flex;
+}
+
+.iconditions > div {
+    width: 50%;
+}
+
+.ispellstats div {
+    width: 33%;
+}
+
+.iactions tr {
+    height: 25px;
+}
+
+#headshot {
+    width: calc(100% - 6px - 10px);
+    margin: 5px;
+    border: 3px solid var(--accent);
+    border-radius: 10px;
+}
+
+#money {
+    width: 64px;
+    float: left;
+}
+
+#money div {
+    margin: 3px;
+}
+
+#local {
+    height: 500px;
+    width: 70%;
+}
+
+/* #endregion */
+
+.dot {
+    height: 12px;
+    width: 12px;
+    background-color: var(--background);
+    padding: 0;
+    border-radius: 50%;
+    border: 1.5px solid var(--accent);
+    position: relative;
+    top: 3px;
+    margin-right: 5px;
+}
+
+.dot.filled {
+    background-color: var(--accent);
+}
+
+.dot.circled {
+    box-shadow: 0 0 0 3px var(--text);
+}
+
+.compact {
+    padding: 2px;
+}
+
+tr.compact {
+    display: block;
+    height: 25px;
+}
+
 img {
     width: 100%;
-}
-
-.spacer {
-    height: 20px;
-}
-
-.indent {
-    width: 10px;
-}
-
-.bold {
-    font-weight: bold;
 }
