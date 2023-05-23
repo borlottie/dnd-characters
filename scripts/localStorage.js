@@ -12,9 +12,12 @@ function update() {
 	console.log("update")
 	const localStorageProxy = {}
 
+	//localStorage before any changes are made.
+	const oldlocalStorage = JSON.parse(localStorage.getItem(charData.charID)) || {} //for referencing previous state of localstorage.
+
 	//inspiration
 	const inspiration = document.getElementById("inspiration")
-	localStorageProxy.inspiration =  inspiration.checked
+	localStorageProxy.inspiration = inspiration.checked
 
 	//current hp
 	const currentHp = document.getElementById("currentHp")
@@ -40,7 +43,7 @@ function update() {
 	for (let moneyInput of moneyContainer.getElementsByTagName("input")) {
 		const moneyType = moneyInput.nextElementSibling.innerText;
 		let moneyAmount = parseInt(moneyInput.value)
-		const localStorageKey = "money"+moneyType
+		const localStorageKey = "money" + moneyType
 
 		localStorageProxy[localStorageKey] = moneyAmount
 		if (moneyAmount < 0 || isNaN(moneyAmount)) {
@@ -51,7 +54,7 @@ function update() {
 	//death saves
 	const deathSavesContainer = document.getElementsByClassName("ideath")[0]
 	const deathSaveCheckBoxes = deathSavesContainer.getElementsByTagName("label")
-	const deathSaves = {"failures":0,"successes":0}
+	const deathSaves = { "failures": 0, "successes": 0 }
 	for (let boxNum = 0; boxNum < deathSaveCheckBoxes.length; boxNum++) {
 		const checkBox = deathSaveCheckBoxes[boxNum].getElementsByTagName("input")[0]
 		if (checkBox.checked) {
@@ -76,35 +79,52 @@ function update() {
 		}
 	}
 
-	//equipment
+	//#region equipment
 	//construct an array of equip values, then stringify and save to localstorage
 	const equipmentContainer = document.getElementById("equipment")
 	const equipmentInputs = equipmentContainer.getElementsByTagName("input")
+
 	const equipmentTotals = {}
+	// currently attuned equipment - stored in localstorageproxy as an array but converted to set for handling.
+	let attunedEquipment = new Set(oldlocalStorage.attunedEquipment || [])
+
 	for (input of equipmentInputs) {
 		if (input.parentElement.parentElement != moneyContainer && input.type == "number") { //if it's not a money total
+
 			const inputTitle = input.parentElement.getElementsByTagName("p")[0].innerText //get item name
 			let inputValue = input.value //get value we want to write
 
 			inputValue = parseInt(inputValue) //parse it as int
 			inputValue = (inputValue < 0 ? 0 : inputValue) //if it's too low, fix
 
+			//if there's a max
 			const nextSib = input.nextElementSibling
-			if (nextSib && nextSib.classList.contains("equipAmount")) { //if there's a max
+			if (nextSib && nextSib.classList.contains("equipAmount")) {
 				const maxAmount = parseInt(nextSib.innerText.substring(1)) || Infinity //work out what the max is
 				inputValue = (inputValue > maxAmount ? maxAmount : inputValue) //if too high, reset
 
 				//default to max if possible
 				inputValue = (!inputValue && inputValue !== 0) ? maxAmount : inputValue
-
 			}
 
-			inputValue = inputValue || 0 //if no max - default to 0
+			inputValue = inputValue || 0 //if no max - default to 0. i think this line is superfluous but it makes the code less confusing
+			equipmentTotals[inputTitle] = inputValue 
 
-			equipmentTotals[inputTitle] = inputValue
+		} else if (input.type == "checkbox") { //attunement checkboxes
+			const inputTitle = input.parentElement.parentElement.parentElement.getElementsByTagName("p")[0].innerText //get item name
+			
+			if (input.checked && attunedEquipment.size < 3) { //item has just been attuned and there's space
+				attunedEquipment.add(inputTitle)
+
+			} else if (!input.checked) { //item shouldnt be attuned
+				attunedEquipment.delete(inputTitle)
+			}
 		}
 	}
+	// list of attuned equipment is processed as a set but must be converted to an Array to properly go through JSON.stringify().
+	localStorageProxy.attunedEquipment = Array.from(attunedEquipment)
 	localStorageProxy.equipment = equipmentTotals
+//#endregion
 
 	//hit dice
 	const hitDiceContainer = document.getElementById("hitDice")
@@ -113,7 +133,7 @@ function update() {
 	for (row of hitDiceContainer.children) { //for every type of hit dice
 		if (row.tagName == "DIV") { //exclude header
 			const rowTitle = row.firstElementChild.innerText
-			const hitDiceType = "d"+rowTitle.split("d")[1]
+			const hitDiceType = "d" + rowTitle.split("d")[1]
 
 			let amountUsed = 0
 			const checkboxes = row.getElementsByTagName("input")
@@ -162,23 +182,23 @@ function update() {
 	}
 	localStorageProxy.expendables = expendablesTotals
 
-    //spell preparing. make sure to make it work for non-casters
-    if ("spellList" in charData && "preparableSpells" in charData.spellList) {
-        preparedSpells = []
-        const spellPrepBox = document.getElementById("spellPrepare")
-        const dropdowns = spellPrepBox.getElementsByTagName("input")
-        const spellList = getSpells("preparable")
+	//spell preparing. make sure to make it work for non-casters
+	if ("spellList" in charData && "preparableSpells" in charData.spellList) {
+		preparedSpells = []
+		const spellPrepBox = document.getElementById("spellPrepare")
+		const dropdowns = spellPrepBox.getElementsByTagName("input")
+		const spellList = getSpells("preparable")
 
-        for (dropdown of dropdowns) {
-            if (dropdown.value in spellList && !(preparedSpells.includes(dropdown.value))) { //spell is preparable and not already prepared
-                preparedSpells.push(dropdown.value)
-            } else { //literally just remove else condition to make it auto rearrange
-                //preparedSpells.push("")
-            }
-        }
+		for (dropdown of dropdowns) {
+			if (dropdown.value in spellList && !(preparedSpells.includes(dropdown.value))) { //spell is preparable and not already prepared
+				preparedSpells.push(dropdown.value)
+			} else { //literally just remove else condition to make it auto rearrange
+				//preparedSpells.push("")
+			}
+		}
 
-        localStorageProxy.preparedSpells = preparedSpells
-    }
+		localStorageProxy.preparedSpells = preparedSpells
+	}
 
 	//notes
 	const notesContainer = document.getElementById("notes")
@@ -190,19 +210,19 @@ function update() {
 
 	localStorageProxy.notes = notesValues
 
-    //save proxy to localstorage
-    localStorage.setItem(charData.charID, JSON.stringify(localStorageProxy))
+	//save proxy to localstorage
+	localStorage.setItem(charData.charID, JSON.stringify(localStorageProxy))
 	dataRetrieve() //called so any resets to default happen
 }
 
 
 //retrieve from localstorage and write to html page
-	//handle some defaults here (for if localstorage has no value for what you want)
-	//run on initial loads / whenever localstorage fuckery happens
-	//also handle widths / other display stuff
+//handle some defaults here (for if localstorage has no value for what you want)
+//run on initial loads / whenever localstorage fuckery happens
+//also handle widths / other display stuff
 function dataRetrieve() {
 	console.log("data retrieve")
-    const localStorageProxy = JSON.parse(localStorage.getItem(charData.charID)) || {}
+	const localStorageProxy = JSON.parse(localStorage.getItem(charData.charID)) || {}
 
 	//inspiration
 	const inspiration = document.getElementById("inspiration")
@@ -216,7 +236,7 @@ function dataRetrieve() {
 	const currentHp = document.getElementById("currentHp")
 	currentHp.value = (localStorageProxy.currentHp !== undefined ? localStorageProxy.currentHp : charData.health.maxHp)
 
-    currentHp.style.width = currentHp.value.length+2+"ch"
+	currentHp.style.width = currentHp.value.length + 2 + "ch"
 
 	//temp hp
 	const tempHp = document.getElementById("tempHp")
@@ -230,7 +250,7 @@ function dataRetrieve() {
 	const hdVal = Number(healDamage.value)
 	healDamage.value = (hdVal <= 0 ? 0 : hdVal)
 	const hdLen = Number(healDamage.value.length)
-	healDamage.style.width = (hdLen == 0 ? "3ch" : hdLen+2+"ch")
+	healDamage.style.width = (hdLen == 0 ? "3ch" : hdLen + 2 + "ch")
 
 	//money
 	const moneyContainer = document.getElementById("money")
@@ -239,14 +259,14 @@ function dataRetrieve() {
 	for (let moneyInput of moneyContainer.getElementsByTagName("input")) {
 		const moneyType = moneyInput.nextElementSibling.innerText;
 
-		const localStorageKey = "money"+moneyType
+		const localStorageKey = "money" + moneyType
 		moneyInput.value = localStorageProxy[localStorageKey] || 0
 
-		totalMoney += Number(moneyInput.value)*moneyWorths[moneyType]
+		totalMoney += Number(moneyInput.value) * moneyWorths[moneyType]
 	}
-	totalMoney = Math.round(totalMoney*100)/100
+	totalMoney = Math.round(totalMoney * 100) / 100
 	const moneyReporter = document.getElementById("moneyReporter")
-	moneyReporter.innerText = "Total Money: "+totalMoney+" GP"
+	moneyReporter.innerText = "Total Money: " + totalMoney + " GP"
 
 	//death saves
 	const deathSavesContainer = document.getElementsByClassName("ideath")[0]
@@ -263,7 +283,7 @@ function dataRetrieve() {
 			checkBox.checked = false
 		}
 	}
-	
+
 	//conditions
 	const conditions = document.getElementById("conditions")
 	conditions.value = localStorageProxy.conditions || "" //default is ""
@@ -282,6 +302,10 @@ function dataRetrieve() {
 
 	//equipment
 	const equipmentTotals = localStorageProxy.equipment || {}
+	const attunedEquipArr = localStorageProxy.attunedEquipment || []
+	console.log(attunedEquipArr)
+	const attunedEquipment = new Set(attunedEquipArr)
+
 	const equipmentContainer = document.getElementById("equipment")
 	const equipmentInputs = equipmentContainer.getElementsByTagName("input")
 
@@ -292,7 +316,7 @@ function dataRetrieve() {
 
 			let maxTotal
 			for (item of charData.equipment) {
-				if (typeof(item) == "object" && item.name.trimLeft() == inputTitle && item.consumable == "semi") {
+				if (typeof (item) == "object" && item.name.trimLeft() == inputTitle && item.consumable == "semi") {
 					maxTotal = item.amount
 				}
 			}
@@ -300,7 +324,10 @@ function dataRetrieve() {
 			input.value = (!equipmentTotals[inputTitle] && equipmentTotals[inputTitle] !== 0) ? (maxTotal || 0) : equipmentTotals[inputTitle]
 
 			const inputLen = input.value.toString().length
-			input.style.width = inputLen+3+"ch"
+			input.style.width = inputLen + 3 + "ch"
+		} else if (input.type == "checkbox") {
+			const inputTitle = input.parentElement.parentElement.parentElement.getElementsByTagName("p")[0].innerText
+			input.checked = attunedEquipment.has(inputTitle)
 		}
 	}
 
@@ -311,12 +338,12 @@ function dataRetrieve() {
 	for (row of hitDiceContainer.children) { //for every type of hit dice
 		if (row.tagName == "DIV") { //exclude header
 			const rowTitle = row.firstElementChild.innerText
-			const hitDiceType = "d"+rowTitle.split("d")[1]
+			const hitDiceType = "d" + rowTitle.split("d")[1]
 
 			amountUsed = hitDiceTotals[hitDiceType] || 0
 			const checkboxes = row.getElementsByTagName("input")
-			for (let boxNum = 0; boxNum<checkboxes.length; boxNum++) {
-				checkboxes[boxNum].checked = boxNum<amountUsed
+			for (let boxNum = 0; boxNum < checkboxes.length; boxNum++) {
+				checkboxes[boxNum].checked = boxNum < amountUsed
 			}
 		}
 	}
@@ -344,34 +371,34 @@ function dataRetrieve() {
 			if (inputType == "number") {
 				inputs[0].value = inputValue
 				const inputLen = inputValue.toString().length
-				inputs[0].style.width = inputLen+3+"ch"
+				inputs[0].style.width = inputLen + 3 + "ch"
 			}
 		}
 	}
 
-    //prepared spells
-    if ("spellList" in charData && "preparableSpells" in charData.spellList) {
-        preparedSpells = localStorageProxy.preparedSpells || []
+	//prepared spells
+	if ("spellList" in charData && "preparableSpells" in charData.spellList) {
+		preparedSpells = localStorageProxy.preparedSpells || []
 
-        const spellPrepBox = document.getElementById("spellPrepare")
-        const dropdowns = spellPrepBox.getElementsByTagName("input")
+		const spellPrepBox = document.getElementById("spellPrepare")
+		const dropdowns = spellPrepBox.getElementsByTagName("input")
 
-        for (dropdownNum in dropdowns) {
-            dropdowns[dropdownNum].value = preparedSpells[dropdownNum] || ""
-        }
+		for (dropdownNum in dropdowns) {
+			dropdowns[dropdownNum].value = preparedSpells[dropdownNum] || ""
+		}
 
-        const spellListContainer = document.getElementById("spells")
-        const dots = spellListContainer.getElementsByClassName("dot")
-        
-        for (dot of dots) {
-            const spellName = dot.nextElementSibling.innerText
-            if (preparedSpells.includes(spellName)) {
-                dot.classList.add("filled")
-            } else {
-                dot.classList.remove("filled")
-            }
-        }
-    }
+		const spellListContainer = document.getElementById("spells")
+		const dots = spellListContainer.getElementsByClassName("dot")
+
+		for (dot of dots) {
+			const spellName = dot.nextElementSibling.innerText
+			if (preparedSpells.includes(spellName)) {
+				dot.classList.add("filled")
+			} else {
+				dot.classList.remove("filled")
+			}
+		}
+	}
 
 	//notes
 	const notesValues = localStorageProxy.notes || []

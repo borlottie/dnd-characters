@@ -204,6 +204,14 @@
             "name": "Scimitar +2",
 			"attunement":true
         },
+		{
+            "name": "Shield +1",
+			"attunement":true
+        },
+		{
+            "name": "Boots of Elvenkind",
+			"attunement":true
+        },
         {
             "name": "Light Crossbow",
             "amount": 2,
