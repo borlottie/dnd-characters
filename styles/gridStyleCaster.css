@@ -121,12 +121,12 @@
     grid-row: 16 / span 5;
 }
 
-.ipreparing {
+.ispellstats {
     grid-column: 4 / span 3;
     grid-row: 21;
 }
 
-.ispellstats {
+.ipreparing {
     grid-column: 4 / span 3;
     grid-row: 14 / span 2;
 }

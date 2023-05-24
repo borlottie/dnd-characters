@@ -192,8 +192,8 @@ function update() {
 		for (dropdown of dropdowns) {
 			if (dropdown.value in spellList && !(preparedSpells.includes(dropdown.value))) { //spell is preparable and not already prepared
 				preparedSpells.push(dropdown.value)
-			} else { //literally just remove else condition to make it auto rearrange
-				//preparedSpells.push("")
+			} else { 
+				//preparedSpells.push("") //literally just remove this line to make it auto rearrange
 			}
 		}
 
@@ -302,9 +302,8 @@ function dataRetrieve() {
 
 	//equipment
 	const equipmentTotals = localStorageProxy.equipment || {}
-	const attunedEquipArr = localStorageProxy.attunedEquipment || []
-	console.log(attunedEquipArr)
-	const attunedEquipment = new Set(attunedEquipArr)
+	//create a new set from the array of attuned equipment
+	const attunedEquipment = new Set(localStorageProxy.attunedEquipment || []) 
 
 	const equipmentContainer = document.getElementById("equipment")
 	const equipmentInputs = equipmentContainer.getElementsByTagName("input")
@@ -382,9 +381,11 @@ function dataRetrieve() {
 
 		const spellPrepBox = document.getElementById("spellPrepare")
 		const dropdowns = spellPrepBox.getElementsByTagName("input")
+		const spellList = getSpells("preparable")
 
-		for (dropdownNum in dropdowns) {
+		for (let dropdownNum in dropdowns) {
 			dropdowns[dropdownNum].value = preparedSpells[dropdownNum] || ""
+			dropdowns[dropdownNum].title = spellList[dropdowns[dropdownNum].value] || ""
 		}
 
 		const spellListContainer = document.getElementById("spells")
