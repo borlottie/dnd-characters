@@ -6,7 +6,7 @@ tr {
     height: 22px;
     width: 22px;
     position: absolute;
-    left: calc(100% - 17px);
+    left: calc(100% - 17px - 10px);
     top: 6px;
 }
 

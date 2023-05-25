@@ -10,6 +10,7 @@
 * {
     font-family: Arial, Helvetica, sans-serif;
     color: var(--text);
+    line-height: 2.25ex;
 }
 
 body {
@@ -172,6 +173,8 @@ input, textarea {
 
 textarea {
     border: 1.5px solid var(--accent);
+    resize: vertical;
+    width: calc(100% - 20px - 4px)
 }
 
 input[list] { /*dropdowns */
@@ -253,11 +256,6 @@ button.expand:active {
     background-color: var(--background);
 }
 
-textarea {
-    min-width: calc(100% - 20px - 4px); /* 20px from the padding, 4px from the border */
-    max-width: calc(100% - 20px - 4px);
-}
-
 .inotes textarea {
     height: 100px;
 }
@@ -279,7 +277,15 @@ h4 + p.equipAmount {
 }
 
 /* #region specifics */
-.iconditions, .ispellstats {
+.iskills, .isaves {
+    padding-right: 0px;
+}
+
+.ispells > div {
+    columns: 2;
+}
+
+.iconditions {
     display: flex;
 }
 
@@ -287,9 +293,15 @@ h4 + p.equipAmount {
     width: 50%;
 }
 
-.ispellstats div {
-    width: 33%;
+.ispellstats {
+    columns: 3;
+    column-gap: 10px;
 }
+
+.ispellstats h3 {
+    height: 4.5ex;
+}
+
 
 .iactions tr {
     height: 25px;
