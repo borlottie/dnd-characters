@@ -283,6 +283,11 @@ h4 + p.equipAmount {
 
 .ispells > div {
     columns: 2;
+    column-gap: 2px;
+}
+
+.ispells .dot {
+    margin-right: 1px;
 }
 
 .iconditions {

@@ -14,12 +14,12 @@ function loadSpells(type) { //type can be "preparable" and "always"
 
 	for (category in spells) { //load in the spells
 		const catDiv = document.createElement("div")
-		catDiv.className = "paragraph"
 
 		const catTitle = document.createElement("h3")
 		catTitle.innerText = category
+		catTitle.className = "paragraph"
+		spellContainer.appendChild(catTitle)
 
-		catDiv.appendChild(catTitle)
 		spellContainer.appendChild(catDiv)
 
 		for (spellTitle in spells[category]) {
