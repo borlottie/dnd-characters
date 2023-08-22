@@ -261,6 +261,10 @@
 			"damageType":"lightning",
 			"hover":"As a bonus action within duration of storm sphere. Ranged spell attack within 60ft of centre of sphere (advantage if target inside sphere)." 
 		},
+		{ 
+			"desc":"Dash, Disengage, Dodge, Help, Grapple or Shove",
+			"hover":"Dash - gain your speed in extra movement\nDisengage - Stop opportunity attacks caused from your movement\nDodge - attack rolls against you have disadvantage if you see the attacker, and advantage on DEX saves. Until start of your next turn. Ends on incapacitation or speed drops to 0.\nHelp - Give adv on next ability check to someone else OR if they’re attacking a creature within 5ft of you, give them adv on first attack roll (both must be before your next turn)\nGrapple or Shove - Make Athletics check opposing target’s acrobatics or athletics, on success the target is incapacitated, pushed 5ft away, or knocked prone. Target must be within reach and at max 1 size larger than you."
+		},
 		{
 			"desc":"(BA) Tempestuous Magic",
 			"hover":"Immediately before/after casting spell of at least 1st level, fly up to 10ft without provoking opportunity attacks."
