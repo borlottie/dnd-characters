@@ -117,6 +117,8 @@
 .ifeatures {
     grid-column: 7 / span 3;
     grid-row: 12 / span 11;
+    max-height: 900px;
+    overflow: scroll;
 }
 
 .ispells {
