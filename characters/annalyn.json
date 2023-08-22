@@ -14,7 +14,7 @@
 	},
 
     "basics": {
-        "class": "Sorcerer 1",
+        "class": "Sorcerer 8",
         "background": "Charlatan",
         "player": "Lottie",
         "race": "Triton",
@@ -23,7 +23,7 @@
     },
 
 	"miscData": { 
-        "profBonus": 2,
+        "profBonus": 3,
         "ac": 13,
         "acHover": "Wears no armour.",
         "init": 3,
@@ -37,9 +37,9 @@
     "abilityScores": {
         "str": 9,
         "dex": 16,
-        "con": 12,
+        "con": 14,
         "int": 10,
-        "wis": 12,
+        "wis": 12, 
         "cha": 20
     },
 
@@ -47,21 +47,25 @@
     "skillProfs": ["persuasion", "sleight of hand", "insight", "deception"],
 	"skillExpertise":[],
     "otherProfs": {
-        "Languages": "Common, Primordial & dialects",
+        "Languages": "Common, Primordial & dialects (Auran, Aquan, Ignan, Terran), Elvish",
         "Armour": "None",
         "Weapons": "Daggers, Darts, Slings, Quarterstaffs, Light crossbows",
         "Tools": "Disguise kit, Forgery kit"
     },
 
 	"health": {
-		"maxHp":7,
-		"hitDice": ["1d6"]
+		"maxHp":42,
+		"hitDice": ["8d6"]
 	},
 	
 	"defenses": [ 
 		{
 			"type":"Resistance",
 			"text":"Resistance to cold damage"
+		},
+		{
+			"type":"Resistance",
+			"text":"Resistance to lightning and thunder damage"
 		}
 	],
 
@@ -76,7 +80,43 @@
 		"Flaws":"I can't resist swindling people who are richer or more powerful than me. I can’t help it - they just don’t deserve their money."
 	},
 
-    "features": { 
+    "features": {
+		"Mask of Many Faces":{
+			"desc":"You gain one eldritch invocation: Mask of Many Faces (Ability to cast Disguise Self at will). ",
+			"hover":"This invocation can be changed upon levelling up. From Eldritch Adept feat."
+		},
+		"Class Features": [
+			{
+				"title": "Tempestuous Magic",
+				"desc": "You can use a bonus action on your turn immediately before or after you cast a spell of 1st level or higher. Doing so allows you to fly up to 10 feet without provoking opportunity attacks.",
+				"hover": ""
+			},
+			{
+				"title":"Heart of the Storm",
+				"desc":"Whenever you start casting a spell of 1st level or higher that deals lightning or thunder damage, stormy magic erupts from you. This eruption causes creatures of your choice that you can see within 10 feet of you to take lightning or thunder damage (choose each time this ability activates) equal to half your sorcerer level.",
+				"hover":""
+			},
+			{
+				"title":"Storm Guide",
+				"desc":"You can subtly control the weather around you. If it is raining, you can use an action to cause the rain to stop falling in a 20-foot-radius sphere centered on you. You can end this effect as a bonus action. If it is windy, you can use a bonus action each round to choose the direction that the wind blows in a 100-foot-radius sphere centered on you. The wind blows in that direction until the end of your next turn. This feature doesn't alter the speed of the wind.",
+				"hover":""
+			},
+			{
+				"title":"Font of Magic",
+				"desc":"You have a well of sorcery points which can be used to regain spell slots, and replenished by burning spell slots, and can be used to create metamagic effects. Unless otherwise noted, you can only use 1 metamagic effect on a spell.",
+				"hover":"Creating sorcery points: Expend a spell slot to recharge as many sorcery points as the spell's level.\nCreating spell slots: as a bonus action. Spend sorcery points according to table below:\n1st - 2\n2nd - 3\n3rd - 5\n4th - 6\n5th - 7\nCannot create spell slots above 5th level."
+			},
+			{
+				"title":"Metamagic - Subtle Spell",
+				"desc":"When you cast a spell, you can spend 1 sorcery point to cast it without any somatic or verbal components.",
+				"hover":""
+			},
+			{
+				"title":"Metamagic - Empowered Spell",
+				"desc":"When you roll damage for a spell, you can spend 1 sorcery point to reroll a number of the damage dice up to 5. You must use the new rolls.",
+				"hover":"You can use Empowered Spell even if you have already used a different Metamagic option during the casting of the spell."
+			}
+		],
 		"Race Features": [
 			{
 				"title": "Amphibious",
@@ -95,40 +135,26 @@
 			},
             {
                 "title":"Control Air and Water",
-                "desc":"You can cast Fog Cloud with this trait. Once you cast a spell with this trait, you can’t cast that spell with it again until you finish a long rest.",
-                "hover":"Starting at 3rd level, you can cast Gust of Wind with this trait, and starting at 5th level, you can also cast Wall of Water with it. Charisma is your spellcasting ability for all three spells."
-            }
-		],
-		"Class Features": [
-			{
-				"title": "Tempestuous Magic",
-				"desc": "You can use a bonus action on your turn immediately before or after you cast a spell of 1st level or higher. Doing so allows you to fly up to 10 feet without provoking opportunity attacks.",
-				"hover": ""
-			}
-		],
-		"Charlatan Background": [
-			{
-				"title": "Favourite Scheme",
-				"desc": "I put on new identities like clothes. I’ve been every girl, and plenty of others too.",
-				"hover": ""
-			},
-            {
-                "title":"False Identity",
-                "desc":"You have created a second identity that includes documentation, established acquaintances, and disguises that allow you to assume that persona.\nYou can forge documents including official papers and personal letters, as long as you have seen an example of the kind of document or the handwriting you are trying to copy.",
-                "hover":""
+                "desc":"You can cast Fog Cloud, Gust of Wind, and Wall of Water with this trait. Once you cast a spell with this trait, you can’t cast that spell with it again until you finish a long rest.",
+                "hover":"Charisma is your spellcasting ability for all three spells."
             }
 		]
 	},
 
 	"notes": {
-		"Backstory":"Here is your backstory blah blah blah",
-		"Cons": {
-			"Linedyn Lahronath":"Linedyn Lahronath is the trusted handmaid of [insert some triton nobility/royalty]. Her skin is light blue and her hair is a deep cerulean.",
-			"Maria Watergrass":"Maria Watergrass is three quarters human and one quarter triton, and has black hair, skin with just the slightest blue tinge. She's perfect for going unnoticed.",
-			"Lady Athrodyn Danallath":"Lady Athrodyn Danallath is the daughter of an undersea noble. Her skin is aqua and her hair is a pearly bluish white (very rare). She has money, but her father is *terribly* stingy with her allowance :(((. She loves to play card games - she doesn't know much about them :(( but somehow she always gets lucky ;) !!"
-		},
 		"Notes":"[field]",
-		"NPCs":"[field]"
+		"NPCs":"[field]",
+		"Charlatan Background":{
+			"Favourite Scheme":"I put on new identities like clothes. I’ve been every girl, and plenty of others too.",
+			"False Identity":"You have created a second identity that includes documentation, established acquaintances, and disguises that allow you to assume that persona.\nYou can forge documents including official papers and personal letters, as long as you have seen an example of the kind of document or the handwriting you are trying to copy."
+		},
+		"Backstory":"When Cairn killed Annalyn's mother a few years ago, she was initially sad - but she quickly came to her senses and realised that this is a world of survival of the fittest, and her mother just wasn't fit enough. If she idolised her mother, she'd end up just like her - murdered in cold blood for a couple of coin. She had to become just like the most effortlessly cutthroat person she knew: Cairn. So she followed them around, learning everything she could from them by hanging around and being a bother until she proved herself somehow ? and they let her tag along with them properly.",
+		"Cons": {
+			"Linedyn Lahronath":"Linedyn Lahronath is the trusted handmaid of [insert some triton nobility/royalty]. Her skin is light blue and her hair is a deep cerulean. She's efficient and capable and not afraid to namedrop her employer to get what she needs. In her time off, she beelines for places to gamble - she has an awful habit and owes a lot of money.",
+			"Maria Dawnheel":"Maria Dawnheel is a half elf of slight stature with black hair and ruddy skin (No blue tinge). She's perfect for going unnoticed.",
+			"Lady Athrodyn Danallath":"Lady Athrodyn Danallath is the daughter of an undersea noble. Her skin is aqua and her hair is a pearly bluish white (very rare). She has money, but her father is *terribly* stingy with her allowance :(((. She loves to play card games - she doesn't know much about them but somehow she always gets lucky ;) !! Gambling is so fun and she's so silly! She loves new jewelry and party dresses!! She has many handmaids and trusted companions, but they're such terrible spoilsports (and also frequently at home with awful headaches) so she usually ditches them to hang out with (flirt with) new people (the very rich).",
+			"Calypso of Ephyra":"Calypso of Ephyra ('The Ephyrian Nymph' in certain circles) is known to be seen occasionally performing/hanging out in clubs, brothels, circuses, carnivals and the like. She appears to be a water nymph and has dark blue skin with shimmering scales, gemstones encrusted around her eyes, and light blue hair that ripples and appears foamy like a waterfall."
+		}
 	},
 
 	"actions": [
@@ -153,7 +179,7 @@
 			"hover":"Range 20ft (normal) / 60ft (disadvantage). Finesse, light, range, thrown"
 		},
 		{
-			"name":"Lightning Lure ©",
+			"name":"Lightning Lure",
 			"type":"save",
 			"saveType":"str", 
 			"damageDice":"1d8", 
@@ -169,13 +195,95 @@
 			"damageType":"cold*",
 			"hover":"60ft range. Make a RANGED spell attack. On a hit the creature's speed is also reduced by 10ft until the start of your next turn." 
 		},
+		{
+			"name":"Fire Bolt",
+			"type":"spell",
+			"damageDice":"2d10",
+			"damageMod":0,
+			"damageType":"fire",
+			"hover":"120ft range. Make a RANGED spell attack."
+		},
         {
 			"name":"① Witch Bolt ©", 
 			"type":"spell",
 			"damageDice":"1d12",
 			"damageMod":0,
-			"damageType":"lightning",
+			"damageType":"lightning*",
 			"hover":"30ft range. Make a RANGED spell attack. On subsequent turns while concentration lasts (max 1 minute), use your action to deal a subsequent 1d12 automatically. The spell ends if you use your action for something other than this."
+		},
+		{
+			"name":"① Magic Missile (auto hit)", 
+			"type":"spell",
+			"damageDice":"1d4",
+			"damageMod":1,
+			"damageType":"force (x3 darts)*",
+			"hover":"NO roll to hit. 120ft range. One extra dart for each spell level above 1st."
+		},
+		{
+			"name":"① Chaos Bolt",
+			"type":"spell", 
+			"damageDice":"2d8+1d6",
+			"damageMod":0, 
+			"damageType":"*",
+			"hover":"Ranged spell attack. If d8s are the same, you basically get a free casting of Chaos Bolt on a new target. Range 120ft. For damage type: pick one of the d8s.\n1 - Acid\n2 - Cold\n3 - Fire\n4 - Force\n5 - Lightning\n6 - Poison\n7 - Psychic\n8 - Thunder. \nThe damage type d8 also counts for amount of damage. Extra d6 per spell level above 1st." 
+		},
+		{
+			"name":"② Scorching Ray",
+			"type":"spell", 
+			"damageDice":"2d6",
+			"damageMod":0, 
+			"damageType":"fire (x3 rays)",
+			"hover":"Ranged spell attack. 120ft range. 3x rays (can have different or same targets), one extra per level above 2nd." 
+		},
+		{
+			"name":"③ Lightning Bolt",
+			"type":"save",
+			"saveType":"dex", 
+			"damageDice":"8d6", 
+			"damageMod":0, 
+			"damageType":"lightning",
+			"hover":"100ft line 5ft wide from self. Half damage on success. Ignites flammable objects not worn/carried. Extra 1d6 damage per level above 4th." 
+		},
+		{
+			"name":"④ Storm Sphere ©",
+			"type":"save",
+			"saveType":"str", 
+			"damageDice":"2d6", 
+			"damageMod":0, 
+			"damageType":"bludgeoning*",
+			"hover":"20ft radius sphere centred within 150ft. This damage is taken when a creature is in the sphere initially or ends a turn there. Duration up to 1 minute." 
+		},
+		{
+			"name":"(BA) Storm Sphere",
+			"type":"spell", 
+			"damageDice":"4d6",
+			"damageMod":0, 
+			"damageType":"lightning",
+			"hover":"As a bonus action within duration of storm sphere. Ranged spell attack within 60ft of centre of sphere (advantage if target inside sphere)." 
+		},
+		{
+			"desc":"(BA) Tempestuous Magic",
+			"hover":"Immediately before/after casting spell of at least 1st level, fly up to 10ft without provoking opportunity attacks."
+		},
+		{
+			"desc":"(R) Shield",
+			"hover":"+5 to AC until end of next turn, no damage from magic missile."
+		},
+		{
+			"desc":"(Escape) ③ Haste ©",
+			"hover":"Double speed of self/willing creature. Double speed, +2 to AC, advantage on DEX saves, extra action on each turn. For 1min ©, then creature skips a turn."
+		},
+		{
+			"desc":"(Escape) ④ Dimension Door",
+			"hover":"Teleport up to 500ft away, take carrying capacity and 1 willing creature of same size or smaller."
+		},
+		{
+			"desc":"(Triton ability) Gust of Wind ©",
+			"hover":"60x10ft gust of wind, STR save or be pushed 15ft away from me. Half movement moving towards me. up to 1 minute, within which I can change direction as BA."
+		},
+		{
+			"desc":"(Triton ability) Wall of Water ©",
+			"hover":"Wall of water of various sizes. Ranged weapon attacks entering space have disadvantage, fire spells do half damage, cold damage spells freeze a section of water (giving it an AC and HP). 60ft range, up to 10min."
 		}
 	],
 
@@ -220,13 +328,37 @@
     ],
 
 	"expendables": { 
+		"Sorcery points":{
+			"type":"dot",
+			"amount":8,
+			"hover":"Can be used to replenish spell slots or use metamagic features",
+			"replenish":"Long rest"
+		},
 		"1st level spells":{
+			"type":"dot",
+			"amount":4,
+			"hover":"",
+			"replenish":"Long rest" 
+		},
+		"2nd level spells":{
+			"type":"dot",
+			"amount":3,
+			"hover":"",
+			"replenish":"Long rest" 
+		},
+		"3rd level spells":{
+			"type":"dot",
+			"amount":3,
+			"hover":"",
+			"replenish":"Long rest" 
+		},
+		"4th level spells":{
 			"type":"dot",
 			"amount":2,
 			"hover":"",
 			"replenish":"Long rest" 
 		},
-		"Fog Cloud Uses":{
+		"Control Air and Water Uses":{
 			"type":"dot",
 			"amount":1,
 			"hover":"For my Control Air and Water feature.",
@@ -235,16 +367,36 @@
 	},
 	"spellList": {
 		"alwaysSpells":{ 
-			"Cantrips":{
-				"Lightning Lure":"Strike at one creature that you can see within 15 feet of you. The target must succeed on a Strength saving throw or be pulled up to 10 feet in a straight line toward you and then take 1d8 lightning damage if it is within 5 feet of you.",
+			"Cantrips/At Will":{
+				"Lightning Lure":"Strike at one creature that you can see within 15 feet of you. The target must succeed on a Strength saving throw or be pulled up to 10 feet in a straight line toward you and then take 2d8 lightning damage if it is within 5 feet of you.",
 				"Gust":"You pick one of the following effects:\n\nOne Medium or smaller creature that you choose must succeed on a Strength saving throw or be pushed up to 5 feet away from you.\n\nYou create a small blast of air capable of moving one small object that is neither held nor carried and that weighs no more than 5 pounds. The object is pushed up to 10 feet away from you. (can't cause damage)\n\nYou create a harmless sensory affect using air",
-				"Ray of Frost":"Make a ranged spell attack against the target. On a hit, it takes 1d8 cold damage, and its speed is reduced by 10 feet until the start of your next turn.",
-				"Shape Water":"You manipulate a 5ft cube of water you can see (within 30ft) in one of the following ways:\n\ninstantaneously move or otherwise change the flow of the water as you direct, up to 5 feet in any direction. (can't cause damage)\n\nThe water forms simple shapes and animates for an hour\n\nYou change the water's colour or opacity (in the same way throughout) for 1 hour\n\nYou freeze the water for 1 hour, if there are no creatures in it."
+				"Ray of Frost":"Make a ranged spell attack against the target. On a hit, it takes 2d8 cold damage, and its speed is reduced by 10 feet until the start of your next turn.",
+				"Shape Water":"You manipulate a 5ft cube of water you can see (within 30ft) in one of the following ways:\n\ninstantaneously move or otherwise change the flow of the water as you direct, up to 5 feet in any direction. (can't cause damage)\n\nThe water forms simple shapes and animates for an hour\n\nYou change the water's colour or opacity (in the same way throughout) for 1 hour\n\nYou freeze the water for 1 hour, if there are no creatures in it.",
+				"Fire Bolt":"Ranged spell attack, 1d10 fire damage. Ignites flammable object if not worn or carried. 120ft range.",
+				"Disguise Self":"You make yourself – including your clothing, armor, weapons, and other belongings on your person – look different (1 hour or action to dismiss). \nCan change height by +-1ft, change appearance of weight. You can’t change your limb arrangement. \nFails to hold up to physical inspection. \n\nTo discern that you are disguised, a creature can use its action to inspect your appearance and must succeed on an Intelligence (Investigation) check against your spell save DC."
 			},
 			"Level 1":{
+				"Witch Bolt":"Make a ranged spell attack against a creature within 30ft. On a hit, the target takes 1d12 lightning damage, and on each of your turns for the duration, you can use your action to deal 1d12 lightning damage to the target automatically. \n\nThe spell ends if you use your action to do anything else. The spell also ends if the target is ever outside the spell’s range or if it has total cover from you. Can be cast at higher levels.",
+				"Shield":"An invisible barrier of magical force appears and protects you. Until the start of your next turn, you have a +5 bonus to AC, including against the triggering attack, and you take no damage from magic missile.",
+				"Magic Missile":"You create three glowing darts of magical force. Each dart hits a creature of your choice that you can see within range. A dart deals 1d4 + 1 force damage to its target. The darts all strike simultaneously and you can direct them to hit one creature or several. Can be cast at higher levels.",
+				"Chaos Bolt":"Ranged spell attack, 2d8+1d6 damage (for type see actions/spell card). If d8s are the same, you basically get a free casting of Chaos Bolt on a new target. Range 120ft. Can be cast at higher levels."
+			},
+			"Level 2":{
+				"Alter Self":"Assume a different physical form for up to an hour (concentration). Aquatic adaptation, Change appearance (can be adjusted within duration), Natural Weapons (Unarmed strikes 1d6 damage, have proficiency, and act as +1 magic weapon.)",
+				"Scorching Ray":"You create three rays of fire and hurl them at targets within range. You can hurl them at one target or several. Make a ranged spell attack for each ray. On a hit, the target takes 2d6 fire damage. Range 120ft. Can be cast at higher levels."
+			},
+			"Level 3":{
+				"Haste":"On a willing creature: the target’s speed is doubled, it gains a +2 bonus to AC, it has advantage on Dexterity saving throws, and it gains an additional action on each of its turns. That action can be used only to take the Attack (one weapon attack only), Dash, Disengage, Hide, or Use an Object action.\nWhen the spell ends, the target can’t move or take actions until after its next turn, as a wave of lethargy sweeps over it.",
+				"Lightning Bolt":"Line 100x5 ft blasts out from you in a direction you choose. DEX save or 8d6 lightning damage (halved on success). Ignites flammable objects if not worn or carried. Can be cast at higher levels."
+			},
+			"Level 4":{
+				"Dimension Door":"Teleport to any spot within 500ft. Can be visible, visualisable, or describable using distance and direction. You can bring along objects as long as their weight doesn’t exceed what you can carry. You can also bring one willing creature of your size or smaller who is carrying gear up to its carrying capacity. The creature must be within 5 feet of you when you cast this spell. If you would arrive in a place already occupied by an object or a creature, you and any creature traveling with you each take 4d6 force damage, and the spell fails to teleport you.",
+				"Storm Sphere":"A 20ft radius sphere centered on a point within 150ft for the duration. Each creature in the sphere when it appears or that ends its turn there: STR save or 2d6 bludgeoning damage. The sphere’s space is difficult terrain. You can also make attacks on BA within duration (with adv if target inside sphere) and creatures inside have disadvantage on listening perception checks."
+			},
+			"Triton spells":{
 				"Fog Cloud":"You create a 20-foot-radius sphere of fog centered on a point within range. The sphere spreads around corners, and its area is heavily obscured. It lasts for the duration or until a wind of moderate or greater speed (at least 10 miles per hour) disperses it.",
-				"Disguise Self":"You make yourself – including your clothing, armor, weapons, and other belongings on your person – look different (1 hour or action to dismiss). \nCan change height by +-1ft, change appearance of weight. You can’t change your limb arrangement. \nFails to hold up to physical inspection. \n\nTo discern that you are disguised, a creature can use its action to inspect your appearance and must succeed on an Intelligence (Investigation) check against your spell save DC.",
-				"Witch Bolt":"Make a ranged spell attack against a creature within 30ft. On a hit, the target takes 1d12 lightning damage, and on each of your turns for the duration, you can use your action to deal 1d12 lightning damage to the target automatically. \n\nThe spell ends if you use your action to do anything else. The spell also ends if the target is ever outside the spell’s range or if it has total cover from you."
+				"Gust of Wind":"A line of strong wind 60 feet long and 10 feet wide blasts from you in a direction you choose for the spell’s duration, creating a 60ft line. Each creature that starts its turn in the line must succeed on a Strength saving throw or be pushed 15 feet away from you in a direction following the line. Any creature in the line must spend 2 feet of movement for every 1 foot it moves when moving closer to you. The gust disperses gas or vapor, and it extinguishes candles, torches, and similar unprotected flames in the area. It causes protected flames, such as those of lanterns, to dance wildly and has a 50 percent chance to extinguish them. As a bonus action on each of your turns before the spell ends, you can change the direction in which the line blasts from you.",
+				"Wall of Water":"You conjure up a wall of water on the ground at a point you can see within range. Up to 30x10x1 ft, or you can make a ringed wall up to 20 feet in diameter, 20 feet high, and 1 foot thick. The wall vanishes when the spell ends. The wall’s space is difficult terrain. Any ranged weapon attack that enters the wall’s space has disadvantage on the attack roll, and fire damage is halved if the fire effect passes through the wall to reach its target. Spells that deal cold damage that pass through the wall cause the area of the wall they pass through to freeze solid (at least a 5-foot square section is frozen). Each 5-foot-square frozen section has AC 5 and 15 hit points. Reducing a frozen section to 0 hit points destroys it. When a section is destroyed, the wall’s water doesn’t fill it."
 			}
 		}
 	}
