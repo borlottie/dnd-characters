@@ -1,7 +1,9 @@
 function navScript() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    const navShow = urlParams.get("nav")
+    // For demo, we always show the nav
+    // const navShow = urlParams.get("nav")
+    const navShow = true;
 
     const pages = {
         "Annalyn": "index.html?src=annalyn&nav",
