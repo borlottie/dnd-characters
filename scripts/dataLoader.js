@@ -1,7 +1,7 @@
 const queryString = window.location.search;
 		const urlParams = new URLSearchParams(queryString);
 
-		const charDataFileName = urlParams.get('src') || "template"
+		const charDataFileName = urlParams.get('src') || "annalyn"
 		const charDataPath = "characters/" + charDataFileName + ".json"
 
 		fetch(charDataPath)
